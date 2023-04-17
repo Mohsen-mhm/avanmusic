@@ -1,1 +1,9 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+@font-face {
+    font-family: 'Vazir';
+    src: url("/fonts/vazir/Vazir-Bold.ttf");
+}
+*{
+    font-family: 'Vazir', serif;
+}
