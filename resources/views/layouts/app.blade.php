@@ -11,9 +11,10 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @yield('styles')
 </head>
 <body>
-<div id="app">
+<div id="app" class="body">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
@@ -75,5 +76,6 @@
         @yield('content')
     </main>
 </div>
+@yield('scripts')
 </body>
 </html>
