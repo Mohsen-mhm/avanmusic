@@ -20,7 +20,7 @@
 </head>
 <body>
 <div id="app" class="body">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg">
         <div class="container" dir="rtl">
             <a class="navbar-brand" style="font-size: 16px" href="{{ route('home') }}">
                 {{ config('app.name', 'آوان موزیک') }}
