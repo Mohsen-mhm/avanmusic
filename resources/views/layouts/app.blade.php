@@ -12,60 +12,45 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('styles')
+    <style>
+        .dropdown-item:hover{
+            background: #333946;
+        }
+    </style>
 </head>
 <body>
 <div id="app" class="body">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                {{ config('app.name', 'music') }}
+        <div class="container" dir="rtl">
+            <a class="navbar-brand" style="font-size: 16px" href="{{ route('home') }}">
+                {{ config('app.name', 'آوان موزیک') }}
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
+            <div class="btn-group">
+                @guest
+                    <img src="/storage/avatars/default-avatar.png" alt="avatar" style="width: 70px;" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                         aria-expanded="false">
+                @else
+                    <img src="/storage/avatars/{{$user->avatar ? : 'default-avatar.png'}}" alt="avatar" style="width: 70px;" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                         aria-expanded="false">
+                @endguest
+                <ul class="dropdown-menu me-3" style="background: #1a202c">
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">ورود</a>
-                            </li>
+                            <li><a class="dropdown-item text-light text-center" href="{{ route('login') }}">ورود</a></li>
                         @endif
-
                         @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">عضویت</a>
-                            </li>
+                            <li><a class="dropdown-item text-light text-center" href="{{ route('register') }}">عضویت</a></li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+                        <li><a class="dropdown-item text-light text-center" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
+                        <li><a class="dropdown-item text-light text-center" href="#" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">خروج</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     @endguest
                 </ul>
             </div>
