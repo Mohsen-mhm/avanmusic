@@ -9,7 +9,7 @@
                      height="100">
                 <h1 class="h3 mb-3 fw-normal text-light ">Avan Music</h1>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="card bg-dark text-light opacity-75">
                     <h5 class="card-header text-center">ثبت نام</h5>
 
@@ -20,7 +20,7 @@
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">نام</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="name" type="text"
                                            class="form-control text-black @error('name') is-invalid @enderror"
                                            name="name"
@@ -38,7 +38,7 @@
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-end">ایمیل</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="email" type="email"
                                            class="form-control text-black @error('email') is-invalid @enderror"
                                            name="email"
@@ -56,7 +56,7 @@
                                 <label for="password"
                                        class="col-md-4 col-form-label text-md-end">رمز عبور</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="password" type="password"
                                            class="form-control text-black @error('password') is-invalid @enderror"
                                            name="password"
@@ -74,14 +74,14 @@
                                 <label for="password-confirm"
                                        class="col-md-4 col-form-label text-md-end">تکرار رمز عبور</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <input id="password-confirm" type="password" class="form-control text-black"
                                            name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
 
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary w-25 opacity-100">
+                            <div class="d-flex justify-content-start">
+                                <button type="submit" class="btn btn-primary">
                                     عضویت
                                 </button>
                             </div>

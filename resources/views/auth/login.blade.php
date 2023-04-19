@@ -1,20 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" dir="rtl">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+        <div class="d-flex justify-content-center align-items-center flex-column">
+            <img class="mb-1" src="/images/phonograph-record-transprent-music-logo-png-hd.png" alt="logo"
+                 width="120"
+                 height="100">
+            <h1 class="h3 mb-3 fw-normal text-light ">Avan Music</h1>
+        </div>
+        <div class="col-md-7">
+            <div class="card bg-dark text-light opacity-75">
+                <div class="card-header text-center">ورود</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">آدرس ایمیل</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -26,9 +32,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">رمز عبور</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -40,12 +46,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
+                            <div class="col-md-8 offset-md-4 d-flex justify-content-md-start">
+                                <div class="form-check d-flex">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                    <label class="form-check-label" style="margin-right: 2rem" for="remember">
+                                        من را به خاطر بسپار
                                     </label>
                                 </div>
                             </div>
@@ -54,12 +60,12 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    ورود
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        رمز عبور خود را فراموش کردید؟
                                     </a>
                                 @endif
                             </div>
@@ -70,4 +76,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('styles')
+    <style>
+        .body {
+            height: 100vh;
+            background-image: url('/images/pexels-vishnu-r-nair-1105666.jpg');
+            background-size: cover;
+        }
+    </style>
 @endsection
