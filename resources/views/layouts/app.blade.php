@@ -28,7 +28,7 @@
             <div class="btn-group">
                 @guest
                     <img src="/storage/avatars/default-avatar.png" alt="آواتار"
-                         style="width: 70px; height: 70px; border-radius: 100px" type="button"
+                         style="width: 70px; border-radius: 100px" type="button"
                          class="btn dropdown-toggle" data-bs-toggle="dropdown"
                          aria-expanded="false">
                 @else
