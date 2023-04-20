@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="w-100 d-flex justify-content-center align-items-center mb-3">
                 <img src="/storage/avatars/{{ $user->avatar ? : 'default-avatar.png' }}" alt="آواتار"
-                     style="width: 100px; height: 100px; border-radius: 100px">
+                     style="width: 120px; height: 120px; border-radius: 100%">
             </div>
             @if($errors->any())
                 @foreach ($errors->all() as $error)
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-6 mb-3">
                         <label for="avatar" class="text-muted">آواتار:</label>
-                        <input id="avatar" type="file"
+                        <input id="avatar" type="file" accept="image/*" data-browse="Select image"
                                class="border-secondary bg-dark text-light form-control @error('avatar') is-invalid @enderror mt-2"
                                name="avatar" value="{{ old('avatar', $user->avatar) }}" autocomplete="avatar"
                                autofocus>
