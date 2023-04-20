@@ -15,8 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        return view('profile.index', compact('user'));
+        return view('profile.index', ['user' => auth()->user()]);
     }
 
     /**
@@ -24,23 +23,22 @@ class ProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user = User::find($id);
-        $validatedData = Validator::validate($request->all(), [
-            'name' => ['required', 'string'],
+        $user = User::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'min:3', 'max:50'],
             'avatar' => ['file', 'max:512']
         ]);
 
-        if (isset($validatedData['avatar'])) {
-            $image = $request->file('avatar');
-
-            $avatarName = time() . '-' . mt_rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
-            Storage::disk('public')->putFileAs('avatars', $image, $avatarName);
-
-            $validatedData['avatar'] = $avatarName;
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = time() . '-' . mt_rand(11111, 99999) . '.' . $avatar->getClientOriginalExtension();
+            $avatarPath = $avatar->storeAs('avatars', $avatarName, 'public');
+            $validatedData['avatar'] = $avatarPath;
         }
 
         $user->update($validatedData);
 
-        return redirect()->back();
+        return back();
     }
 }
