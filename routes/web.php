@@ -21,4 +21,5 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('profile', ProfileController::class)->except(['show']);
+Route::resource('profile', ProfileController::class)->only(['index', 'update'])->middleware(['auth']);
+

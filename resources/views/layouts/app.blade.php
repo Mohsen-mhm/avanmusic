@@ -42,7 +42,7 @@
                             <li><a class="dropdown-item text-light text-center" href="{{ route('register') }}">عضویت</a></li>
                         @endif
                     @else
-                        <li><a class="dropdown-item text-light text-center" href="#">Another action</a></li>
+                        <li><a class="dropdown-item text-light text-center" href="{{ route('profile.index') }}">پروفایل</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
