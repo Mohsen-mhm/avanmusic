@@ -7,6 +7,7 @@
                 <img src="/storage/avatars/{{ $user->avatar ? : 'default-avatar.png' }}" alt="آواتار"
                      style="width: 120px; height: 120px; border-radius: 100%">
             </div>
+
             @if($errors->any())
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">
@@ -16,6 +17,7 @@
                     </div>
                 @endforeach
             @endif
+
             <form action="{{ route('profile.update', $user->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
