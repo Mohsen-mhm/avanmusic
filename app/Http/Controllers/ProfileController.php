@@ -35,7 +35,8 @@ class ProfileController extends Controller
             $avatar = $request->file('avatar');
             $avatarName = time() . '-' . mt_rand(11111, 99999) . '.' . $avatar->getClientOriginalExtension();
 
-            $avatar->storeAs('avatars', $avatarName, 'public');
+            $path = 'avatars/' . $avatarName;
+            Storage::disk('public')->put($path, file_get_contents($avatar));
             $validatedData['avatar'] = $avatarName;
         }
 
