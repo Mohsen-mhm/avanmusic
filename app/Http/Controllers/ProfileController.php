@@ -37,6 +37,7 @@ class ProfileController extends Controller
 
             $path = 'avatars/' . $avatarName;
             Storage::disk('public')->put($path, file_get_contents($avatar));
+
             $validatedData['avatar'] = $avatarName;
         }
 
