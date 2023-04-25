@@ -36,4 +36,9 @@ class Song extends Model
     {
         return $this->hasMany(Stanza::class);
     }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }
