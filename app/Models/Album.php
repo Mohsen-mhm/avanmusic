@@ -16,4 +16,14 @@ class Album extends Model
         'cover_image',
         'release_date',
     ];
+
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class);
+    }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
 }
