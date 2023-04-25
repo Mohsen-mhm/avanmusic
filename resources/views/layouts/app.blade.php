@@ -32,7 +32,7 @@
                          class="btn dropdown-toggle" data-bs-toggle="dropdown"
                          aria-expanded="false">
                 @else
-                    <img src="/storage/avatars/{{$user->avatar ? : 'default-avatar.png'}}" alt="آواتار"
+                    <img src="/storage/avatars/{{auth()->user()->avatar ? : 'default-avatar.png'}}" alt="آواتار"
                          style="width: 70px; border-radius: 100%" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
                          aria-expanded="false">
                 @endguest

@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function (){
-    dd('is admin');
-});
+Route::get('/', [AdminController::class, 'home'])->name('home');
