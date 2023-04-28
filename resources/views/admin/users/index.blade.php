@@ -3,7 +3,8 @@
 @section('content')
     <div class="container my-5" dir="rtl">
         <div class="d-flex justify-content-end mb-4">
-            <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-success w-auto">ایجاد کاربر</a>
+            <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-success ms-2 me-2 w-auto">ایجاد کاربر</a>
+            <a href="{{ route('admin.home') }}" class="btn btn-sm btn-secondary ms-2 me-2 w-auto">بازگشت</a>
         </div>
         <div class="row justify-content-center">
             <table class="table table-dark table-striped table-hover text-center">
