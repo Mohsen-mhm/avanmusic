@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.users.edit', ['user' => User::findOrFail($id)]);
     }
 
     /**
@@ -68,6 +68,31 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'min:3', 'max:50'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'avatar' => ['file', 'max:512'],
+            'superuser' => ['in:0,1'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['superuser'] = (int) $request->input('superuser');
+
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = time() . '-' . mt_rand(11111, 99999) . '.' . $avatar->getClientOriginalExtension();
+
+            $path = 'avatars/' . $avatarName;
+            Storage::disk('public')->put($path, file_get_contents($avatar));
+
+            $validatedData['avatar'] = $avatarName;
+        }
+
+        $user->update($validatedData);
+
+        return redirect()->route('admin.users.index');
     }
 }
