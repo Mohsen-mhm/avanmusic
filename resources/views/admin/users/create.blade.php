@@ -16,7 +16,7 @@
                 @endforeach
             @endif
 
-            <form action="{{ route('admin.users.store') }}" method="POST">
+            <form action="{{ route('admin.users.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-6 mb-3">
@@ -49,7 +49,7 @@
                         <label for="avatar" class="text-muted">آواتار:</label>
                         <input id="avatar" type="file" accept="image/*" data-browse="Select image"
                                class="border-secondary bg-dark text-light form-control @error('avatar') is-invalid @enderror mt-2"
-                               name="avatar" value="{{ old('avatar') }}" autocomplete="avatar"
+                               name="avatar" autocomplete="avatar"
                                autofocus>
                         @error('avatar')
                         <span class="invalid-feedback" role="alert">
