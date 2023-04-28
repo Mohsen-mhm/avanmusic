@@ -49,7 +49,9 @@ class UserController extends Controller
 
             $validatedData['avatar'] = $avatarName;
         }
+
         User::create($validatedData);
+
         return redirect()->route('admin.users.index');
     }
 
