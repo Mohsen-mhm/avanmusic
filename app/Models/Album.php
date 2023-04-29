@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Album extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     protected $fillable = [
         'name',
+        'slug',
         'artist_id',
         'genre_id',
         'cover_image',
@@ -30,5 +32,15 @@ class Album extends Model
     public function songs()
     {
         return $this->hasMany(Song::class);
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name',
+                'onUpdate' => true,
+            ]
+        ];
     }
 }
