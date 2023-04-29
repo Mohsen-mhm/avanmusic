@@ -21,7 +21,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.artists.create');
     }
 
     /**
@@ -29,7 +29,14 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'bio' => ['required', 'string', 'max:1000'],
+        ]);
+
+        Artist::create($validatedData);
+
+        return redirect()->route('admin.artists.index');
     }
 
     /**

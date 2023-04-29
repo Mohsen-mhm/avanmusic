@@ -21,7 +21,7 @@
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $artist->name }}</td>
-                        <td>{{ $artist->bio }}</td>
+                        <td class="text-truncate" style="max-width: 50px">{{ $artist->bio }}</td>
                         <td>
                             <a href="{{ route('admin.artists.edit', $artist->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
