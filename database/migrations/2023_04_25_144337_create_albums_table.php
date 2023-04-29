@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
+            $table->string('slug');
 
             $table->unsignedBigInteger('artist_id');
             $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');

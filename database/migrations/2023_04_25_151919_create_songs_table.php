@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->id();
 
             $table->string('name');
+            $table->string('slug');
+
             $table->boolean('single')->default(1);
 
             $table->unsignedBigInteger('artist_id');
@@ -23,7 +25,6 @@ return new class extends Migration {
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
 
             $table->string('path');
-            $table->string('link');
 
             $table->timestamps();
         });
