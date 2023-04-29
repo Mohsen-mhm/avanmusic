@@ -68,6 +68,7 @@ class ArtistController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Artist::destroy($id);
+        return back();
     }
 }

@@ -44,7 +44,7 @@
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">ایجاد ژانر</button>
+                <button type="submit" class="btn btn-primary">ایجاد آرتیست</button>
             </form>
         </div>
     </div>
