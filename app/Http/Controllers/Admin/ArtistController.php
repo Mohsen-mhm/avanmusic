@@ -40,19 +40,11 @@ class ArtistController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.artists.edit', ['artist' => Artist::findOrFail($id)]);
     }
 
     /**
@@ -60,7 +52,15 @@ class ArtistController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $artist = Artist::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'bio' => ['required', 'string', 'max:1000'],
+        ]);
+
+        $artist->update($validatedData);
+        return redirect()->route('admin.artists.index');
     }
 
     /**
