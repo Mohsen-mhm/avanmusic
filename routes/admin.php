@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ArtistController;
 use App\Http\Controllers\Admin\GenreController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AdminController::class, 'home'])->name('home');
 
 Route::resource('users', UserController::class)->except(['show', 'destroy']);
+
 Route::resource('genres', GenreController::class)->except(['show']);
+
+Route::resource('artists', ArtistController::class)->except(['show']);
