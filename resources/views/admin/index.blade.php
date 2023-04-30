@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </a>
-            <a href="" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.songs.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
