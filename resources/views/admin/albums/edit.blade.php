@@ -70,9 +70,9 @@
                         @enderror
                     </div>
                     <div class="col-6 mb-3">
-                        <label for="artist" class="text-muted">ژانر:</label>
-                        <select id="genre" name="genre_id"
-                                class="border-secondary bg-dark text-light form-select @error('name') is-invalid @enderror mt-2"
+                        <label for="genre_id" class="text-muted">ژانر:</label>
+                        <select id="genre_id" name="genre_id"
+                                class="border-secondary bg-dark text-light form-select @error('genre_id') is-invalid @enderror mt-2"
                                 required autocomplete="genre_id"
                                 autofocus>
                             <option value="{{ $album->genre->id }}">{{ $album->genre->name }}</option>

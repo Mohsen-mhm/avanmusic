@@ -32,12 +32,25 @@
                         @enderror
                     </div>
                     <div class="col-6 mb-3">
-                        <label for="cover_image" class="text-muted">موزیک:</label>
-                        <input id="cover_image" type="file" accept="image/*" data-browse="Select image"
-                               class="border-secondary bg-dark text-light form-control @error('cover_image') is-invalid @enderror mt-2"
-                               name="cover_image" autocomplete="cover_image"
+                        <label for="music" class="text-muted">موزیک:</label>
+                        <input id="music" type="file" accept="audio/*" data-browse="Select music"
+                               class="border-secondary bg-dark text-light form-control @error('music') is-invalid @enderror mt-2"
+                               name="music" autocomplete="music"
                                autofocus required>
-                        @error('cover_image')
+                        @error('music')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-6 mb-3">
+                        <label for="single" class="text-muted">سینگل ترک:</label>
+                        <input type="checkbox" id="single" name="single" value="1"
+                               class="border-secondary bg-dark text-light form-check-input @error('single') is-invalid @enderror">
+                        @error('single')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -48,7 +61,8 @@
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label for="artist_id" class="text-muted">آرتیست:</label>
-                        <select id="artist_id" name="artist_id" class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
+                        <select id="artist_id" name="artist_id"
+                                class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
                                 required autocomplete="artist_id"
                                 autofocus>
                             <option value="">یک آرتیست انتخاب کنید</option>
@@ -62,31 +76,18 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="col-6 mb-3">
-                        <label for="artist" class="text-muted">ژانر:</label>
-                        <select id="genre" name="genre_id" class="border-secondary bg-dark text-light form-select @error('name') is-invalid @enderror mt-2"
-                                required autocomplete="genre_id"
+                    <div class="col-6 mb-3" id="album-select">
+                        <label for="album_id" class="text-muted">آلبوم:</label>
+                        <select id="album_id" name="album_id"
+                                class="border-secondary bg-dark text-light form-select @error('album_id') is-invalid @enderror mt-2"
+                                autocomplete="album_id"
                                 autofocus>
-                            <option value="">یک ژانر انتخاب کنید</option>
-                            @foreach (\App\Models\Genre::all() as $genre)
-                                <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                            <option value="">یک آلبوم انتخاب کنید</option>
+                            @foreach (\App\Models\Album::all() as $album)
+                                <option value="{{ $album->id }}">{{ $album->name }}</option>
                             @endforeach
                         </select>
-                        @error('genre_id')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label for="release_date" class="text-muted">نام:</label>
-                        <input id="release_date" type="text"
-                               class="border-secondary bg-dark text-light form-control @error('release_date') is-invalid @enderror mt-2"
-                               name="release_date" value="{{ old('release_date') }}" required autocomplete="release_date"
-                               autofocus>
-                        @error('release_date')
+                        @error('album_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -99,21 +100,21 @@
     </div>
 @endsection
 
-@section('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
-@endsection
-
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+            integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
-        flatpickr("#release_date", {
-            theme: "dark",
-            enableTime: true,
-            dateFormat: "Y-m-d H:i",
-            time_24hr: true,
-            timezone: "Asia/Tehran",
-            defaultDate: new Date(),
+        $(document).ready(function () {
+            $('#single').change(function () {
+                if ($(this).is(':checked')) {
+                    $('#album-select').slideUp();
+                } else {
+                    $('#album-select').slideDown();
+                }
+            });
         });
     </script>
 @endsection

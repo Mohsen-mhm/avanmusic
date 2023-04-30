@@ -48,7 +48,8 @@
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label for="artist_id" class="text-muted">آرتیست:</label>
-                        <select id="artist_id" name="artist_id" class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
+                        <select id="artist_id" name="artist_id"
+                                class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
                                 required autocomplete="artist_id"
                                 autofocus>
                             <option value="">یک آرتیست انتخاب کنید</option>
@@ -63,8 +64,9 @@
                         @enderror
                     </div>
                     <div class="col-6 mb-3">
-                        <label for="artist" class="text-muted">ژانر:</label>
-                        <select id="genre" name="genre_id" class="border-secondary bg-dark text-light form-select @error('name') is-invalid @enderror mt-2"
+                        <label for="genre_id" class="text-muted">ژانر:</label>
+                        <select id="genre_id" name="genre_id"
+                                class="border-secondary bg-dark text-light form-select @error('genre_id') is-invalid @enderror mt-2"
                                 required autocomplete="genre_id"
                                 autofocus>
                             <option value="">یک ژانر انتخاب کنید</option>
@@ -81,10 +83,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="release_date" class="text-muted">نام:</label>
+                        <label for="release_date" class="text-muted">تاریخ انتشار:</label>
                         <input id="release_date" type="text"
                                class="border-secondary bg-dark text-light form-control @error('release_date') is-invalid @enderror mt-2"
-                               name="release_date" value="{{ old('release_date') }}" required autocomplete="release_date"
+                               name="release_date" value="{{ old('release_date') }}" required
+                               autocomplete="release_date"
                                autofocus>
                         @error('release_date')
                         <span class="invalid-feedback" role="alert">
