@@ -86,7 +86,7 @@ class AlbumController extends Controller
         }
 
         $album->update($validatedData);
-        
+
         return redirect()->route('admin.albums.index');
     }
 
