@@ -35,7 +35,7 @@ class SongController extends Controller
             'single' => ['boolean', 'in:0,1'],
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'album_id' => ['string'],
-            'music' => ['file'],
+            'music' => ['required', 'file'],
         ]);
 
         if (isset($validatedData['single'])) {
@@ -64,7 +64,7 @@ class SongController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.songs.edit', ['song' => Song::findOrFail($id)]);
     }
 
     /**
@@ -72,7 +72,35 @@ class SongController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $song = Song::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'single' => ['boolean', 'in:0,1'],
+            'artist_id' => ['required', 'string', 'exists:artists,id'],
+            'album_id' => ['string'],
+            'music' => ['file'],
+        ]);
+
+        if (isset($validatedData['single'])) {
+            $validatedData['album_id'] = null;
+        } else {
+            $validatedData['single'] = "0";
+        }
+
+        if ($request->hasFile('music')) {
+            $music = $request->file('music');
+            $musicName = time() . '-' . mt_rand(11111, 99999) . '.' . $music->getClientOriginalExtension();
+
+            $path = 'musics/' . $musicName;
+            Storage::disk('public')->put($path, file_get_contents($music));
+
+            $validatedData['music'] = $musicName;
+        }
+
+        $song->update($validatedData);
+
+        return redirect()->route('admin.songs.index');
     }
 
     /**

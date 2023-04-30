@@ -3,14 +3,9 @@
 @section('content')
     <div class="container my-5" dir="rtl">
         <div class="d-flex justify-content-end mb-4">
-            <a href="{{ route('admin.albums.index') }}" class="btn btn-sm btn-secondary w-auto">بازگشت</a>
+            <a href="{{ route('admin.songs.index') }}" class="btn btn-sm btn-secondary w-auto">بازگشت</a>
         </div>
         <div class="row justify-content-center">
-            <div class="w-100 d-flex justify-content-center align-items-center mb-3">
-                <img src="/storage/covers/{{ $album->cover_image }}" alt="کاور"
-                     style="width: 120px; height: 120px; border-radius: 100%">
-            </div>
-
             @if($errors->any())
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">
@@ -21,7 +16,7 @@
                 @endforeach
             @endif
 
-            <form action="{{ route('admin.albums.update', $album->id) }}" enctype="multipart/form-data" method="POST">
+            <form action="{{ route('admin.songs.update', $song->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -29,7 +24,7 @@
                         <label for="name" class="text-muted">نام:</label>
                         <input id="name" type="text"
                                class="border-secondary bg-dark text-light form-control @error('name') is-invalid @enderror mt-2"
-                               name="name" value="{{ old('name', $album->name) }}" required autocomplete="name"
+                               name="name" value="{{ old('name', $song->name) }}" required autocomplete="name"
                                autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -38,12 +33,26 @@
                         @enderror
                     </div>
                     <div class="col-6 mb-3">
-                        <label for="cover_image" class="text-muted">کاور:</label>
-                        <input id="cover_image" type="file" accept="image/*" data-browse="Select image"
-                               class="border-secondary bg-dark text-light form-control @error('cover_image') is-invalid @enderror mt-2"
-                               name="cover_image" autocomplete="cover_image"
+                        <label for="music" class="text-muted">موزیک:</label>
+                        <input id="music" type="file" accept="audio/*" data-browse="Select music"
+                               class="border-secondary bg-dark text-light form-control @error('music') is-invalid @enderror mt-2"
+                               name="music" autocomplete="music"
                                autofocus>
-                        @error('cover_image')
+                        @error('music')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-6 mb-3">
+                        <label for="single" class="text-muted">سینگل ترک:</label>
+                        <input type="checkbox" id="single" name="single" value="1"
+                               class="border-secondary bg-dark text-light form-check-input @error('single') is-invalid @enderror"
+                               @if($song->single) checked @endif>
+                        @error('single')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -58,7 +67,7 @@
                                 class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
                                 required autocomplete="artist_id"
                                 autofocus>
-                            <option value="{{ $album->artist->id }}">{{ $album->artist->name }}</option>
+                            <option value="{{ $song->artist->id }}">{{ $song->artist->name }}</option>
                             @foreach (\App\Models\Artist::all() as $artist)
                                 <option value="{{ $artist->id }}">{{ $artist->name }}</option>
                             @endforeach
@@ -69,60 +78,53 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="col-6 mb-3">
-                        <label for="artist" class="text-muted">ژانر:</label>
-                        <select id="genre" name="genre_id"
-                                class="border-secondary bg-dark text-light form-select @error('name') is-invalid @enderror mt-2"
-                                required autocomplete="genre_id"
+                    <div class="col-6 mb-3" id="album-select">
+                        <label for="album_id" class="text-muted">آلبوم:</label>
+                        <select id="album_id" name="album_id"
+                                class="border-secondary bg-dark text-light form-select @error('album_id') is-invalid @enderror mt-2"
+                                autocomplete="album_id"
                                 autofocus>
-                            <option value="{{ $album->genre->id }}">{{ $album->genre->name }}</option>
-                            @foreach (\App\Models\Genre::all() as $genre)
-                                <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                            @if($song->single)
+                                <option value="0">یک آلبوم انتخاب کنید</option>
+                            @else
+                                <option value="{{ $song->album->id }}">{{ $song->album->name }}</option>
+                            @endif
+                            @foreach (\App\Models\Album::all() as $album)
+                                <option value="{{ $album->id }}">{{ $album->name }}</option>
                             @endforeach
                         </select>
-                        @error('genre_id')
+                        @error('album_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label for="release_date" class="text-muted">تاریخ انتشار:</label>
-                        <input id="release_date" type="text"
-                               class="border-secondary bg-dark text-light form-control @error('release_date') is-invalid @enderror mt-2"
-                               name="release_date" value="{{ old('release_date', $album->release_date) }}" required
-                               autocomplete="release_date"
-                               autofocus>
-                        @error('release_date')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">ویرایش آلبوم</button>
+                <button type="submit" class="btn btn-primary">ویرایش موزیک</button>
             </form>
         </div>
     </div>
 @endsection
 
-@section('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
-@endsection
-
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+            integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
-        flatpickr("#release_date", {
-            theme: "dark",
-            enableTime: true,
-            dateFormat: "Y-m-d H:i",
-            time_24hr: true,
-            timezone: "Asia/Tehran",
-            defaultDate: new Date("{!! \Illuminate\Support\Carbon::parse($album->release_date) !!}"),
+        $(document).ready(function () {
+            if ({!! $song->single !!}) {
+                $('#album-select').slideUp();
+            }
+
+            $('#single').change(function () {
+                if ($(this).is(':checked')) {
+                    $('#album-select').slideUp();
+                } else {
+                    $('#album-select').slideDown();
+                }
+            });
         });
     </script>
 @endsection

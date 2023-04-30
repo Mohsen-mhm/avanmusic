@@ -94,7 +94,7 @@
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">ایجاد آلبوم</button>
+                <button type="submit" class="btn btn-primary">ایجاد موزیک</button>
             </form>
         </div>
     </div>
