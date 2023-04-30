@@ -31,7 +31,13 @@
                             @endif
                         </td>
                         <td><small>{{ $song->artist->name }}</small></td>
-                        <td><small>{{ $song->album->name }}</small></td>
+                        <td>
+                            @if($song->single)
+                                <small class="text-warning">ندارد</small>
+                            @else
+                                <small class="text-light">{{ $song->album->name }}</small>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{ route('admin.songs.edit', $song->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>

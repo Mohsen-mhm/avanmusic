@@ -65,7 +65,7 @@
                                 class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
                                 required autocomplete="artist_id"
                                 autofocus>
-                            <option value="">یک آرتیست انتخاب کنید</option>
+                            <option value="0">یک آرتیست انتخاب کنید</option>
                             @foreach (\App\Models\Artist::all() as $artist)
                                 <option value="{{ $artist->id }}">{{ $artist->name }}</option>
                             @endforeach
@@ -82,7 +82,7 @@
                                 class="border-secondary bg-dark text-light form-select @error('album_id') is-invalid @enderror mt-2"
                                 autocomplete="album_id"
                                 autofocus>
-                            <option value="">یک آلبوم انتخاب کنید</option>
+                            <option value="0">یک آلبوم انتخاب کنید</option>
                             @foreach (\App\Models\Album::all() as $album)
                                 <option value="{{ $album->id }}">{{ $album->name }}</option>
                             @endforeach
