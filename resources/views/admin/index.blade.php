@@ -68,7 +68,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <a href="" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.albums.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg width="50" height="50" class="text-warning" stroke-width="1.5" viewBox="0 0 24 24"
