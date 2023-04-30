@@ -57,7 +57,7 @@ class AlbumController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.albums.edit', ['album' => Album::findOrFail($id)]);
     }
 
     /**
@@ -65,7 +65,29 @@ class AlbumController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $album = Album::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'artist_id' => ['required', 'string', 'exists:artists,id'],
+            'genre_id' => ['required', 'string', 'exists:genres,id'],
+            'release_date' => ['required', 'date_format:Y-m-d H:i'],
+            'cover_image' => ['file', 'max:512'],
+        ]);
+
+        if ($request->hasFile('cover_image')) {
+            $cover = $request->file('cover_image');
+            $coverName = time() . '-' . mt_rand(11111, 99999) . '.' . $cover->getClientOriginalExtension();
+
+            $path = 'covers/' . $coverName;
+            Storage::disk('public')->put($path, file_get_contents($cover));
+
+            $validatedData['cover_image'] = $coverName;
+        }
+
+        $album->update($validatedData);
+        
+        return redirect()->route('admin.albums.index');
     }
 
     /**
@@ -73,6 +95,7 @@ class AlbumController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Album::destroy($id);
+        return back();
     }
 }

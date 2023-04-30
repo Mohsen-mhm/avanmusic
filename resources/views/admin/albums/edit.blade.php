@@ -3,9 +3,14 @@
 @section('content')
     <div class="container my-5" dir="rtl">
         <div class="d-flex justify-content-end mb-4">
-            <a href="{{ route('admin.artists.index') }}" class="btn btn-sm btn-secondary w-auto">بازگشت</a>
+            <a href="{{ route('admin.albums.index') }}" class="btn btn-sm btn-secondary w-auto">بازگشت</a>
         </div>
         <div class="row justify-content-center">
+            <div class="w-100 d-flex justify-content-center align-items-center mb-3">
+                <img src="/storage/covers/{{ $album->cover_image }}" alt="کاور"
+                     style="width: 120px; height: 120px; border-radius: 100%">
+            </div>
+
             @if($errors->any())
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">
@@ -16,17 +21,29 @@
                 @endforeach
             @endif
 
-            <form action="{{ route('admin.artists.update', $artist->id) }}" method="POST">
+            <form action="{{ route('admin.albums.update', $album->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
-                    <div class="col-12 mb-3">
+                    <div class="col-6 mb-3">
                         <label for="name" class="text-muted">نام:</label>
                         <input id="name" type="text"
                                class="border-secondary bg-dark text-light form-control @error('name') is-invalid @enderror mt-2"
-                               name="name" value="{{ old('name', $artist->name) }}" required autocomplete="name"
+                               name="name" value="{{ old('name', $album->name) }}" required autocomplete="name"
                                autofocus>
                         @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="cover_image" class="text-muted">کاور:</label>
+                        <input id="cover_image" type="file" accept="image/*" data-browse="Select image"
+                               class="border-secondary bg-dark text-light form-control @error('cover_image') is-invalid @enderror mt-2"
+                               name="cover_image" autocomplete="cover_image"
+                               autofocus>
+                        @error('cover_image')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -35,19 +52,77 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 mb-3">
-                        <label for="bio" class="text-muted">بیوگرافی:</label>
-                        <textarea name="bio" id="bio" cols="30" rows="5" class="border-secondary bg-dark text-light form-control @error('bio') is-invalid @enderror mt-2" required autocomplete="bio"
-                                  autofocus>{{ old('bio', $artist->bio) }}</textarea>
-                        @error('bio')
+                    <div class="col-6 mb-3">
+                        <label for="artist_id" class="text-muted">آرتیست:</label>
+                        <select id="artist_id" name="artist_id"
+                                class="border-secondary bg-dark text-light form-select @error('artist_id') is-invalid @enderror mt-2"
+                                required autocomplete="artist_id"
+                                autofocus>
+                            <option value="{{ $album->artist->id }}">{{ $album->artist->name }}</option>
+                            @foreach (\App\Models\Artist::all() as $artist)
+                                <option value="{{ $artist->id }}">{{ $artist->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('artist_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="artist" class="text-muted">ژانر:</label>
+                        <select id="genre" name="genre_id"
+                                class="border-secondary bg-dark text-light form-select @error('name') is-invalid @enderror mt-2"
+                                required autocomplete="genre_id"
+                                autofocus>
+                            <option value="{{ $album->genre->id }}">{{ $album->genre->name }}</option>
+                            @foreach (\App\Models\Genre::all() as $genre)
+                                <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('genre_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">ویرایش آرتیست</button>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="release_date" class="text-muted">تاریخ انتشار:</label>
+                        <input id="release_date" type="text"
+                               class="border-secondary bg-dark text-light form-control @error('release_date') is-invalid @enderror mt-2"
+                               name="release_date" value="{{ old('release_date', $album->release_date) }}" required
+                               autocomplete="release_date"
+                               autofocus>
+                        @error('release_date')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">ویرایش آلبوم</button>
             </form>
         </div>
     </div>
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+@endsection
+
+@section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#release_date", {
+            theme: "dark",
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            time_24hr: true,
+            timezone: "Asia/Tehran",
+            defaultDate: new Date("{!! \Illuminate\Support\Carbon::parse($album->release_date) !!}"),
+        });
+    </script>
 @endsection

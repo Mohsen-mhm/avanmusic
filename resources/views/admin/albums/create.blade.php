@@ -36,7 +36,7 @@
                         <input id="cover_image" type="file" accept="image/*" data-browse="Select image"
                                class="border-secondary bg-dark text-light form-control @error('cover_image') is-invalid @enderror mt-2"
                                name="cover_image" autocomplete="cover_image"
-                               autofocus>
+                               autofocus required>
                         @error('cover_image')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">ایجاد آرتیست</button>
+                <button type="submit" class="btn btn-primary">ایجاد آلبوم</button>
             </form>
         </div>
     </div>
