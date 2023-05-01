@@ -30,8 +30,9 @@
                             <a href="{{ route('admin.albums.edit', $album->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
                             <button
-                               onclick="event.preventDefault(); document.querySelector('#album-{{ $album->id }}').submit()"
-                               class="btn btn-sm btn-danger">حذف</button>
+                                onclick="event.preventDefault(); document.querySelector('#album-{{ $album->id }}').submit()"
+                                class="btn btn-sm btn-danger">حذف
+                            </button>
                             <form action="{{ route('admin.albums.destroy', $album->id) }}" method="POST" class="d-none"
                                   id="album-{{ $album->id }}">
                                 @csrf
@@ -43,6 +44,8 @@
                 </tbody>
             </table>
         </div>
-        {{ $albums->links() }}
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $albums->links() }}
+        </div>
     </div>
 @endsection

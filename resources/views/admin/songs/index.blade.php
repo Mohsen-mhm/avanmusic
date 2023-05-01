@@ -42,8 +42,9 @@
                             <a href="{{ route('admin.songs.edit', $song->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
                             <button
-                               onclick="event.preventDefault(); document.querySelector('#song-{{ $song->id }}').submit()"
-                               class="btn btn-sm btn-danger">حذف</button>
+                                onclick="event.preventDefault(); document.querySelector('#song-{{ $song->id }}').submit()"
+                                class="btn btn-sm btn-danger">حذف
+                            </button>
                             <form action="{{ route('admin.songs.destroy', $song->id) }}" method="POST" class="d-none"
                                   id="song-{{ $song->id }}">
                                 @csrf
@@ -55,6 +56,8 @@
                 </tbody>
             </table>
         </div>
-        {{ $songs->links() }}
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $songs->links() }}
+        </div>
     </div>
 @endsection

@@ -3,7 +3,8 @@
 @section('content')
     <div class="container my-5" dir="rtl">
         <div class="d-flex justify-content-end mb-4">
-            <a href="{{ route('admin.playlists.create') }}" class="btn btn-sm btn-success ms-2 me-2 w-auto">ایجاد پلی لیست</a>
+            <a href="{{ route('admin.playlists.create') }}" class="btn btn-sm btn-success ms-2 me-2 w-auto">ایجاد پلی
+                لیست</a>
             <a href="{{ route('admin.home') }}" class="btn btn-sm btn-secondary ms-2 me-2 w-auto">بازگشت</a>
         </div>
         <div class="row justify-content-center">
@@ -28,9 +29,11 @@
                             <a href="{{ route('admin.playlists.edit', $playlist->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
                             <button
-                               onclick="event.preventDefault(); document.querySelector('#playlist-{{ $playlist->id }}').submit()"
-                               class="btn btn-sm btn-danger">حذف</button>
-                            <form action="{{ route('admin.playlists.destroy', $playlist->id) }}" method="POST" class="d-none"
+                                onclick="event.preventDefault(); document.querySelector('#playlist-{{ $playlist->id }}').submit()"
+                                class="btn btn-sm btn-danger">حذف
+                            </button>
+                            <form action="{{ route('admin.playlists.destroy', $playlist->id) }}" method="POST"
+                                  class="d-none"
                                   id="playlist-{{ $playlist->id }}">
                                 @csrf
                                 @method('DELETE')
@@ -41,6 +44,8 @@
                 </tbody>
             </table>
         </div>
-        {{ $playlists->links() }}
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $playlists->links() }}
+        </div>
     </div>
 @endsection

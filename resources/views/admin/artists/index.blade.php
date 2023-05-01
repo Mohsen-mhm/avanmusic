@@ -3,7 +3,8 @@
 @section('content')
     <div class="container my-5" dir="rtl">
         <div class="d-flex justify-content-end mb-4">
-            <a href="{{ route('admin.artists.create') }}" class="btn btn-sm btn-success ms-2 me-2 w-auto">ایجاد آرتیست</a>
+            <a href="{{ route('admin.artists.create') }}" class="btn btn-sm btn-success ms-2 me-2 w-auto">ایجاد
+                آرتیست</a>
             <a href="{{ route('admin.home') }}" class="btn btn-sm btn-secondary ms-2 me-2 w-auto">بازگشت</a>
         </div>
         <div class="row justify-content-center">
@@ -26,9 +27,11 @@
                             <a href="{{ route('admin.artists.edit', $artist->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
                             <button
-                               onclick="event.preventDefault(); document.querySelector('#artist-{{ $artist->id }}').submit()"
-                               class="btn btn-sm btn-danger">حذف</button>
-                            <form action="{{ route('admin.artists.destroy', $artist->id) }}" method="POST" class="d-none"
+                                onclick="event.preventDefault(); document.querySelector('#artist-{{ $artist->id }}').submit()"
+                                class="btn btn-sm btn-danger">حذف
+                            </button>
+                            <form action="{{ route('admin.artists.destroy', $artist->id) }}" method="POST"
+                                  class="d-none"
                                   id="artist-{{ $artist->id }}">
                                 @csrf
                                 @method('DELETE')
@@ -39,6 +42,8 @@
                 </tbody>
             </table>
         </div>
-        {{ $artists->links() }}
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $artists->links() }}
+        </div>
     </div>
 @endsection

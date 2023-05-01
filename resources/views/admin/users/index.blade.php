@@ -30,12 +30,15 @@
                                 <small class="text-danger">خیر</small>
                             @endif
                         </td>
-                        <td><a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-primary">ویرایش</a></td>
+                        <td><a href="{{ route('admin.users.edit', $user->id) }}"
+                               class="btn btn-sm btn-primary">ویرایش</a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
-        {{ $users->links() }}
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $users->links() }}
+        </div>
     </div>
 @endsection
