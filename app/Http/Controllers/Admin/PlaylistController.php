@@ -71,6 +71,8 @@ class PlaylistController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Playlist::destroy($id);
+
+        return back();
     }
 }
