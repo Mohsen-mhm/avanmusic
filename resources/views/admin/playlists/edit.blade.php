@@ -65,7 +65,7 @@
                 @if($notInPlaylistCount)
                     @foreach($songs as $song)
                         @php
-                            $isAvailableInPlaylist = \App\Models\Playlist::whereHas('songs', function ($query) use ($song) {
+                            $isAvailableInPlaylist = \App\Models\Playlist::where('id', $playlist->id)->whereHas('songs', function ($query) use ($song) {
                                 $query->where('songs.id', $song->id);
                             })->exists();
                         @endphp
