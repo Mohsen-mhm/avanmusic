@@ -43,3 +43,16 @@
         </div>
     </div>
 @endsection
+
+@section('styles')
+    <style>
+        .pagination {
+            background-color: #2c2f33;
+        }
+
+        /* Set the text color for the paginator */
+        .pagination a, .pagination span {
+            color: #fff;
+        }
+    </style>
+@endsection
