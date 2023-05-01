@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AlbumController;
 use App\Http\Controllers\Admin\ArtistController;
 use App\Http\Controllers\Admin\GenreController;
+use App\Http\Controllers\Admin\PlaylistController;
 use App\Http\Controllers\Admin\SongController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,5 @@ Route::resource('artists', ArtistController::class)->except(['show']);
 Route::resource('albums', AlbumController::class)->except(['show']);
 
 Route::resource('songs', SongController::class)->except(['show']);
+
+Route::resource('playlists', PlaylistController::class)->except(['show']);
