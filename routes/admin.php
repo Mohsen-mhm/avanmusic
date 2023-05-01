@@ -34,3 +34,5 @@ Route::resource('albums', AlbumController::class)->except(['show']);
 Route::resource('songs', SongController::class)->except(['show']);
 
 Route::resource('playlists', PlaylistController::class)->except(['show']);
+Route::post('playlists/{playlist}/add-song/{song}', [PlaylistController::class, 'addSong'])->name('playlists.add');
+Route::post('playlists/{playlist}/remove-song/{song}', [PlaylistController::class, 'removeSong'])->name('playlists.remove');

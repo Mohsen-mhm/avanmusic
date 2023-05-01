@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Playlist;
+use App\Models\Song;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -43,19 +44,11 @@ class PlaylistController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.playlists.edit', ['playlist' => Playlist::findOrFail($id), 'songs' => Song::paginate(10)]);
     }
 
     /**
@@ -63,7 +56,15 @@ class PlaylistController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $playlist = Playlist::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        $playlist->update($validatedData);
+
+        return redirect()->route('admin.playlists.index');
     }
 
     /**
@@ -72,6 +73,26 @@ class PlaylistController extends Controller
     public function destroy(string $id)
     {
         Playlist::destroy($id);
+
+        return back();
+    }
+
+    public function addSong($playlistId, $songId)
+    {
+        $song = Song::find($songId);
+        $playlist = Playlist::find($playlistId);
+
+        $playlist->songs()->attach($song->id);
+
+        return back();
+    }
+
+    public function removeSong($playlistId, $songId)
+    {
+        $song = Song::find($songId);
+        $playlist = Playlist::find($playlistId);
+
+        $playlist->songs()->detach($song->id);
 
         return back();
     }
