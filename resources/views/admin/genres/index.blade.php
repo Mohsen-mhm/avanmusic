@@ -24,8 +24,9 @@
                             <a href="{{ route('admin.genres.edit', $genre->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
                             <button
-                               onclick="event.preventDefault(); document.querySelector('#genre-{{ $genre->id }}').submit()"
-                               class="btn btn-sm btn-danger">حذف</button>
+                                onclick="event.preventDefault(); document.querySelector('#genre-{{ $genre->id }}').submit()"
+                                class="btn btn-sm btn-danger">حذف
+                            </button>
                             <form action="{{ route('admin.genres.destroy', $genre->id) }}" method="POST" class="d-none"
                                   id="genre-{{ $genre->id }}">
                                 @csrf
@@ -37,6 +38,8 @@
                 </tbody>
             </table>
         </div>
-        {{ $genres->links() }}
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $genres->links() }}
+        </div>
     </div>
 @endsection
