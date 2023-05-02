@@ -91,7 +91,7 @@
                 @else
                     <tr>
                         <td colspan="3">
-                            <div class="border border-warning text-warning p-3">All songs added</div>
+                            <div class="border border-warning text-warning p-3">همه موزیک ها اضافه شدند</div>
                         </td>
                     </tr>
                 @endif
@@ -138,7 +138,7 @@
                 @else
                     <tr>
                         <td colspan="3">
-                            <div class="border border-warning text-warning p-3">No songs available</div>
+                            <div class="border border-warning text-warning p-3">موزیکی وجود ندارد</div>
                         </td>
                     </tr>
                 @endif
