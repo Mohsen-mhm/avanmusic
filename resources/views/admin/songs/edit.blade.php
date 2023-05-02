@@ -103,6 +103,95 @@
                 <button type="submit" class="btn btn-primary">ویرایش موزیک</button>
             </form>
         </div>
+
+        <div class="w-100 d-flex justify-content-center">
+            <hr class="text-warning w-75 my-5">
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <h4 class="text-light">افزودن شعر موزیک</h4>
+        </div>
+
+        <div class="row justify-content-center">
+            <form method="POST" action="{{ route('admin.songs.add.stanza', $song->id) }}">
+                @csrf
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="stanza_number" class="text-muted">شماره مصرع:</label>
+                        <input id="stanza_number" type="number"
+                               class="border-secondary bg-dark text-light form-control @error('stanza_number') is-invalid @enderror mt-2"
+                               name="stanza_number" value="{{ old('stanza_number') }}" required
+                               autocomplete="stanza_number"
+                               autofocus>
+                        @error('stanza_number')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="lyrics" class="text-muted">تکست مصرع:</label>
+                        <textarea name="lyrics" id="lyrics" cols="30" rows="3"
+                                  class="border-secondary bg-dark text-light form-control @error('lyrics') is-invalid @enderror mt-2"
+                                  required autocomplete="lyrics"
+                                  autofocus>{{ old('lyrics') }}</textarea>
+                        @error('lyrics')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">افزودن مصرع</button>
+            </form>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <hr class="text-warning w-75 my-5">
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <h4 class="text-light">مصرع های موزیک</h4>
+        </div>
+
+        <div class="row justify-content-center">
+            <table data-empty="No data available" class="table table-dark table-striped table-hover text-center">
+                <thead>
+                <tr>
+                    <th scope="col">شماره مصرع</th>
+                    <th scope="col">تکست مصرع</th>
+                    <th scope="col">اقدامات</th>
+                </tr>
+                </thead>
+                <tbody>
+                @if($song->stanzas->count())
+                    @foreach($song->stanzas as $stanza)
+                        <tr>
+                            <td>{{ $stanza->stanza_number }}</td>
+                            <td>{{ $stanza->lyrics }}</td>
+                            <td>
+                                <button
+                                    onclick="event.preventDefault(); document.querySelector('#stanza-{{ $stanza->id }}').submit()"
+                                    class="btn btn-sm btn-danger">حذف کردن
+                                </button>
+                                <form
+                                    action="{{ route('admin.songs.remove.stanza', $stanza->id) }}"
+                                    method="POST" class="d-none"
+                                    id="stanza-{{ $stanza->id }}">
+                                    @csrf
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="3">
+                            <div class="border border-warning text-warning p-3">مصرعی وجود ندارد</div>
+                        </td>
+                    </tr>
+                @endif
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection
 

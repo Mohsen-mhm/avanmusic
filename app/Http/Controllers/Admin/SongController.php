@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Song;
+use App\Models\Stanza;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class SongController extends Controller
 {
@@ -109,6 +111,25 @@ class SongController extends Controller
     public function destroy(string $id)
     {
         Song::destroy($id);
+        return back();
+    }
+
+    public function addStanza(Request $request, $songId)
+    {
+        $validatedData = $request->validate([
+            'stanza_number' => ['required', 'integer', 'unique:stanzas,stanza_number,NULL,id,song_id,' . $songId],
+            'lyrics' => ['required', 'string', 'max:255'],
+        ]);
+        $validatedData['song_id'] = $songId;
+
+        Stanza::create($validatedData);
+        return back();
+    }
+
+    public function removeStanza($stanzaId)
+    {
+        Stanza::destroy($stanzaId);
+
         return back();
     }
 }
