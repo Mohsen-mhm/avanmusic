@@ -25,6 +25,7 @@ return new class extends Migration {
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
 
             $table->string('music');
+            $table->string('cover')->nullable();
 
             $table->timestamps();
         });

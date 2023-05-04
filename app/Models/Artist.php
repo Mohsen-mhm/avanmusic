@@ -14,6 +14,7 @@ class Artist extends Model
         'name',
         'slug',
         'bio',
+        'image',
     ];
 
     public function albums()

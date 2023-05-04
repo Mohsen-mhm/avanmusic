@@ -17,6 +17,7 @@ class Song extends Model
         'artist_id',
         'album_id',
         'music',
+        'cover',
     ];
 
     public function artist()
