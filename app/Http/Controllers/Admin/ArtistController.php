@@ -34,7 +34,7 @@ class ArtistController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'bio' => ['required', 'string', 'max:1000'],
-            'image' => ['file', 'max:512'],
+            'image' => ['required', 'file', 'max:512'],
         ]);
 
         if ($request->hasFile('image')) {

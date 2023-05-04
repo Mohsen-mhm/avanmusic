@@ -42,7 +42,7 @@ class AlbumController extends Controller
             $cover = $request->file('cover_image');
             $coverName = time() . '-' . mt_rand(11111, 99999) . '.' . $cover->getClientOriginalExtension();
 
-            $path = 'covers/' . $coverName;
+            $path = 'album-covers/' . $coverName;
             Storage::disk('public')->put($path, file_get_contents($cover));
 
             $validatedData['cover_image'] = $coverName;
@@ -79,7 +79,7 @@ class AlbumController extends Controller
             $cover = $request->file('cover_image');
             $coverName = time() . '-' . mt_rand(11111, 99999) . '.' . $cover->getClientOriginalExtension();
 
-            $path = 'covers/' . $coverName;
+            $path = 'album-covers/' . $coverName;
             Storage::disk('public')->put($path, file_get_contents($cover));
 
             $validatedData['cover_image'] = $coverName;

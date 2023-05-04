@@ -38,6 +38,7 @@ class SongController extends Controller
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'album_id' => ['string'],
             'music' => ['required', 'file'],
+            'cover' => ['required', 'file', 'max:512'],
         ]);
 
         if (isset($validatedData['single'])) {
@@ -54,6 +55,16 @@ class SongController extends Controller
             Storage::disk('public')->put($path, file_get_contents($music));
 
             $validatedData['music'] = $musicName;
+        }
+
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $coverName = time() . '-' . mt_rand(11111, 99999) . '.' . $cover->getClientOriginalExtension();
+
+            $path = 'song-covers/' . $coverName;
+            Storage::disk('public')->put($path, file_get_contents($cover));
+
+            $validatedData['cover'] = $coverName;
         }
 
         Song::create($validatedData);
@@ -82,6 +93,7 @@ class SongController extends Controller
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'album_id' => ['string'],
             'music' => ['file'],
+            'cover' => ['file', 'max:512'],
         ]);
 
         if (isset($validatedData['single'])) {
@@ -98,6 +110,16 @@ class SongController extends Controller
             Storage::disk('public')->put($path, file_get_contents($music));
 
             $validatedData['music'] = $musicName;
+        }
+
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $coverName = time() . '-' . mt_rand(11111, 99999) . '.' . $cover->getClientOriginalExtension();
+
+            $path = 'song-covers/' . $coverName;
+            Storage::disk('public')->put($path, file_get_contents($cover));
+
+            $validatedData['cover'] = $coverName;
         }
 
         $song->update($validatedData);

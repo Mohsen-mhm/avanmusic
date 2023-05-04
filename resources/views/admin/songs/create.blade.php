@@ -19,7 +19,7 @@
             <form action="{{ route('admin.songs.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="row">
-                    <div class="col-6 mb-3">
+                    <div class="col-12 mb-3">
                         <label for="name" class="text-muted">نام:</label>
                         <input id="name" type="text"
                                class="border-secondary bg-dark text-light form-control @error('name') is-invalid @enderror mt-2"
@@ -31,6 +31,9 @@
                         </span>
                         @enderror
                     </div>
+                </div>
+
+                <div class="row">
                     <div class="col-6 mb-3">
                         <label for="music" class="text-muted">موزیک:</label>
                         <input id="music" type="file" accept="audio/*" data-browse="Select music"
@@ -38,6 +41,18 @@
                                name="music" autocomplete="music"
                                autofocus required>
                         @error('music')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="cover" class="text-muted">کاور موزیک:</label>
+                        <input id="cover" type="file" accept="image/*" data-browse="Select image"
+                               class="border-secondary bg-dark text-light form-control @error('cover') is-invalid @enderror mt-2"
+                               name="cover" autocomplete="cover"
+                               required autofocus>
+                        @error('cover')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
