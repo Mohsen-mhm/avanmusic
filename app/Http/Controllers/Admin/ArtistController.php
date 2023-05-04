@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Artist;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArtistController extends Controller
 {
@@ -33,7 +34,18 @@ class ArtistController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'bio' => ['required', 'string', 'max:1000'],
+            'image' => ['file', 'max:512'],
         ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '-' . mt_rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
+
+            $path = 'artist-images/' . $imageName;
+            Storage::disk('public')->put($path, file_get_contents($image));
+
+            $validatedData['image'] = $imageName;
+        }
 
         Artist::create($validatedData);
 
@@ -58,7 +70,18 @@ class ArtistController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'bio' => ['required', 'string', 'max:1000'],
+            'image' => ['file', 'max:512'],
         ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '-' . mt_rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
+
+            $path = 'artist-images/' . $imageName;
+            Storage::disk('public')->put($path, file_get_contents($image));
+
+            $validatedData['image'] = $imageName;
+        }
 
         $artist->update($validatedData);
         return redirect()->route('admin.artists.index');

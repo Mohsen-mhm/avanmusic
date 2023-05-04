@@ -16,11 +16,11 @@
                 @endforeach
             @endif
 
-            <form action="{{ route('admin.artists.update', $artist->id) }}" method="POST">
+            <form action="{{ route('admin.artists.update', $artist->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
-                    <div class="col-12 mb-3">
+                    <div class="col-6 mb-3">
                         <label for="name" class="text-muted">نام:</label>
                         <input id="name" type="text"
                                class="border-secondary bg-dark text-light form-control @error('name') is-invalid @enderror mt-2"
@@ -32,12 +32,26 @@
                         </span>
                         @enderror
                     </div>
+                    <div class="col-6 mb-3">
+                        <label for="image" class="text-muted">عکس آرتیست:</label>
+                        <input id="image" type="file" accept="image/*" data-browse="Select image"
+                               class="border-secondary bg-dark text-light form-control @error('image') is-invalid @enderror mt-2"
+                               name="image" autocomplete="image"
+                               autofocus>
+                        @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 mb-3">
                         <label for="bio" class="text-muted">بیوگرافی:</label>
-                        <textarea name="bio" id="bio" cols="30" rows="5" class="border-secondary bg-dark text-light form-control @error('bio') is-invalid @enderror mt-2" required autocomplete="bio"
+                        <textarea name="bio" id="bio" cols="30" rows="5"
+                                  class="border-secondary bg-dark text-light form-control @error('bio') is-invalid @enderror mt-2"
+                                  required autocomplete="bio"
                                   autofocus>{{ old('bio', $artist->bio) }}</textarea>
                         @error('bio')
                         <span class="invalid-feedback" role="alert">
