@@ -48,6 +48,9 @@
                         @endif
                     @else
                         <li><a class="dropdown-item text-light text-center"
+                               href="{{ route('home') }}">صفحه اصلی</a></li>
+                        <li>
+                        <li><a class="dropdown-item text-light text-center"
                                href="{{ route('profile.index') }}">پروفایل</a></li>
                         <li>
                             <hr class="dropdown-divider">

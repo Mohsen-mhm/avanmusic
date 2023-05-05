@@ -19,7 +19,7 @@
             <form action="{{ route('admin.artists.update', $artist->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
-                
+
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label for="name" class="text-muted">نام:</label>
