@@ -3,7 +3,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-<div class="swiper mySwiper mt-5" style="height: 500px">
+<div class="swiper songSwiper mt-5" style="height: 500px">
     <div class="swiper-wrapper" style="height: 450px;">
         <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
@@ -68,7 +68,7 @@
                 <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
-        
+
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -99,7 +99,7 @@
 </style>
 
 <script>
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".songSwiper", {
         slidesPerView: 4,
         centeredSlides: true,
         spaceBetween: 30,
