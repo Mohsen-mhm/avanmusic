@@ -5,47 +5,70 @@
 
 <div class="swiper mySwiper mt-5" style="height: 500px">
     <div class="swiper-wrapper" style="height: 450px;">
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem; height: 450px">
-            <img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="...">
+        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
 
         <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
-            <img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="...">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
 
         <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
-            <img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="...">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
 
         <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
-            <img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="...">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
 
         <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
-            <img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="...">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
 
         <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
-            <img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="...">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
             </div>
         </div>
+
+        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
+            </div>
+        </div>
+
+        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-text">Some quick example text</a>
+            </div>
+        </div>
+        
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
