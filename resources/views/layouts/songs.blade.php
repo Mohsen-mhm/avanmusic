@@ -3,84 +3,83 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-<div class="swiper songSwiper mt-5" style="height: 500px">
-    <div class="swiper-wrapper" style="height: 450px;">
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+<div class="swiper songSwiper mt-5" style="height: 450px">
+    <div class="swiper-wrapper" style="height: 400px;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
-        <div class="card bg-dark text-light swiper-slide" style="width: 18rem;">
+        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="card-text">Some quick example text</a>
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                    برنامه نویسان
+                    است.</a>
             </div>
         </div>
 
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next text-light"></div>
+    <div class="swiper-button-prev text-light"></div>
 </div>
 
 <style>
@@ -114,10 +113,6 @@
         grabCursor: true,
         loop: true,
         autoplay: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
