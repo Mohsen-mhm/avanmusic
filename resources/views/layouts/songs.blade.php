@@ -8,7 +8,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -17,7 +18,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -26,7 +28,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -35,7 +38,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -44,7 +48,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -53,7 +58,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -62,7 +68,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -71,7 +78,8 @@
         <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
             <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای طراحان گرافیک و
+                <a href="#" class="card-text text-decoration-none" style="font-size: 16px;">لورم ایپسوم متن ساختگی برای
+                    طراحان گرافیک و
                     برنامه نویسان
                     است.</a>
             </div>
@@ -113,6 +121,7 @@
         grabCursor: true,
         loop: true,
         autoplay: true,
+
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
