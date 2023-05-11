@@ -79,7 +79,7 @@ class UserController extends Controller
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-        $validatedData['superuser'] = (int) $request->input('superuser');
+        $validatedData['superuser'] = (int)$request->input('superuser');
 
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');

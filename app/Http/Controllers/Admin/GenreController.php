@@ -58,7 +58,7 @@ class GenreController extends Controller
         ]);
 
         $genre->update($validatedData);
-        
+
         return redirect()->route('admin.genres.index');
     }
 
