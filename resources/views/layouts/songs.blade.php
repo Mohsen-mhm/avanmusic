@@ -12,11 +12,20 @@
         <i class="bi bi-music-note-beamed text-warning ms-1" style="font-size: 20px"></i>
         <h5>آخرین موزیک ها</h5>
     </div>
-    <a href="#" class="d-flex justify-content-center align-items-center text-light p-1 text-decoration-none">
+    <a href="#" id="more" class="d-flex justify-content-center align-items-center text-light p-1 text-decoration-none">
         <small class="text-warning">همه موزیک ها</small>
-        <i class="bi bi-arrow-left text-warning me-1 mt-1" style="font-size: 18px;"></i>
+        <i class="bi bi-arrow-left text-warning me-1 mt-1" id="more-icon" style="font-size: 18px;"></i>
     </a>
 </div>
+<style>
+    #more-icon {
+        transition: all linear 0.1s;
+    }
+
+    #more:hover #more-icon {
+        transform: translateX(-5px);
+    }
+</style>
 
 <div class="swiper songSwiper mt-5" style="height: 450px">
     <div class="swiper-wrapper" style="height: 400px;">
