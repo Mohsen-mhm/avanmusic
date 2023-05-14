@@ -5,6 +5,7 @@
         <!-- sliders -->
         @include('layouts.carousel')
 
+        <!-- recent songs -->
         @include('layouts.songs')
 
         <!-- Footer -->
