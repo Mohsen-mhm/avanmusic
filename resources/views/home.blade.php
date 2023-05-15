@@ -8,6 +8,9 @@
         <!-- recent songs -->
         @include('layouts.songs')
 
+        <!-- recent albums -->
+        @include('layouts.albums')
+
         <!-- Footer -->
         @include('layouts.footer')
     </div>
