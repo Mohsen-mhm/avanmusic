@@ -11,6 +11,9 @@
         <!-- recent albums -->
         @include('layouts.albums')
 
+        <!-- recent artists -->
+        @include('layouts.artists')
+
         <!-- Footer -->
         @include('layouts.footer')
     </div>
