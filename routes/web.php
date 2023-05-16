@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SongController;
@@ -26,3 +27,4 @@ Route::resource('profile', ProfileController::class)->only(['index', 'update'])-
 Route::post('profile/change-password', [ProfileController::class, 'changePassword'])->middleware(['auth'])->name('profile.change.password');
 
 Route::get('song/{slug}', [SongController::class, 'index'])->name('song');
+Route::get('album/{slug}', [AlbumController::class, 'index'])->name('album');
