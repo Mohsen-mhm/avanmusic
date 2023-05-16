@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SongController;
@@ -28,3 +29,4 @@ Route::post('profile/change-password', [ProfileController::class, 'changePasswor
 
 Route::get('song/{slug}', [SongController::class, 'index'])->name('song');
 Route::get('album/{slug}', [AlbumController::class, 'index'])->name('album');
+Route::get('artist/{slug}', [ArtistController::class, 'index'])->name('artist');

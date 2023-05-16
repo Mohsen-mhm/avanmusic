@@ -36,4 +36,9 @@ class Artist extends Model
             ]
         ];
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
