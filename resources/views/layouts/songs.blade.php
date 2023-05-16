@@ -28,95 +28,18 @@
 </style>
 
 <div class="swiper songSwiper mt-5" style="height: 450px">
-    <div class="swiper-wrapper" style="height: 400px;">
+    <div class="swiper-wrapper" style="height: 300px;">
 
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light text-light" style="font-size: 16px;">لورم
-                    ایپسوم متن ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
+        @foreach(\App\Models\Song::all() as $song)
+            <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
+                <a href="{{ route('song', $song) }}"><img src="/storage/song-covers/{{ $song->cover }}"
+                                                          class="card-img-top" style="min-height: 15rem; max-height: 10rem" alt="..."></a>
+                <div class="card-body">
+                    <a href="{{ route('song', $song) }}" class="card-text text-decoration-none text-light"
+                       style="font-size: 16px;">{{ $song->name }}</a>
+                </div>
             </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
-
-        <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
-            <a href="#"><img src="images/Masoud-Sadeghloo-Labod.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="#" class="card-text text-decoration-none text-light" style="font-size: 16px;">لورم ایپسوم متن
-                    ساختگی برای
-                    طراحان گرافیک و
-                    برنامه نویسان
-                    است.</a>
-            </div>
-        </div>
+        @endforeach
 
     </div>
     <div class="swiper-button-next text-light"></div>

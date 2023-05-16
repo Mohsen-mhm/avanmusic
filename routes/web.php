@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('profile', ProfileController::class)->only(['index', 'update'])->middleware(['auth']);
 Route::post('profile/change-password', [ProfileController::class, 'changePassword'])->middleware(['auth'])->name('profile.change.password');
+
+Route::get('song/{slug}', [SongController::class, 'index'])->name('song');
