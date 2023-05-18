@@ -21,9 +21,11 @@
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <h2 class="text-warning mb-5">متن موزیک</h2>
                     <p class="text-light text-center" style="font-size: 18px">
+                        
                         @foreach($song->stanzas->sortBy('stanza_number') as $stanza)
                             {{ $stanza->lyrics }}<br/><br/>
                         @endforeach
+
                     </p>
                 </div>
             </div>
