@@ -12,4 +12,11 @@ class SongController extends Controller
         $song = Song::whereSlug($slug)->first();
         return view('song.index', compact('song'));
     }
+
+    public function all()
+    {
+        $songs = Song::paginate(20);
+
+        return view('song.all', compact('songs'));
+    }
 }
