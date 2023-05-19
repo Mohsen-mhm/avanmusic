@@ -30,7 +30,7 @@
 <div class="swiper artistSwiper mt-5" style="height: 450px">
     <div class="swiper-wrapper" style="height: 300px;">
 
-        @foreach(\App\Models\Artist::all() as $artist)
+        @foreach(\App\Models\Artist::latest()->take(10)->get() as $artist)
             <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
                 <a href="{{ route('artist', $artist) }}"><img src="/storage/artist-images/{{ $artist->image }}"
                                                               class="card-img-top" style="min-height: 15rem; max-height: 10rem" alt="..."></a>
