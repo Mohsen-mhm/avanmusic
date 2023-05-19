@@ -4,6 +4,7 @@
     <div class="container" dir="rtl">
         <div class="row justify-content-center">
             <h2 class="text-center text-warning mb-4">همه موزیک ها</h2>
+            
             @foreach($songs as $song)
                 <div class="col d-flex flex-column justify-content-center align-items-center mb-4">
                     <div class="card bg-dark text-light" style="min-width: 15rem; max-width: 15rem;">
@@ -18,6 +19,7 @@
                     </div>
                 </div>
             @endforeach
+
         </div>
         {{ $songs->links() }}
     </div>
