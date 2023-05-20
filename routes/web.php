@@ -30,5 +30,8 @@ Route::post('profile/change-password', [ProfileController::class, 'changePasswor
 Route::get('songs', [SongController::class, 'all'])->name('song.all');
 Route::get('song/{slug}', [SongController::class, 'index'])->name('song');
 
+Route::get('albums', [AlbumController::class, 'all'])->name('album.all');
 Route::get('album/{slug}', [AlbumController::class, 'index'])->name('album');
+
+Route::get('artists', [ArtistController::class, 'all'])->name('artist.all');
 Route::get('artist/{slug}', [ArtistController::class, 'index'])->name('artist');
