@@ -12,4 +12,11 @@ class ArtistController extends Controller
         $artist = Artist::whereSlug($slug)->first();
         return view('artist.index', compact('artist'));
     }
+
+    public function all()
+    {
+        $artists = Artist::paginate(20);
+
+        return view('artist.all', compact('artists'));
+    }
 }
