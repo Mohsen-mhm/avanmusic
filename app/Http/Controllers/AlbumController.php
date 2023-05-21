@@ -9,7 +9,9 @@ class AlbumController extends Controller
 {
     public function index($slug)
     {
-        dd($slug);
+        $album = Album::whereSlug($slug)->first();
+
+        return view('album.index', compact('album'));
     }
 
     public function all()

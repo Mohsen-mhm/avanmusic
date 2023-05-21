@@ -3,7 +3,7 @@
 @section('content')
     <div class="container" dir="rtl">
         <div class="row justify-content-center">
-            <h2 class="text-center text-warning mb-4">همه موزیک ها</h2>
+            <h2 class="text-center text-warning mb-4">همه آلبوم ها</h2>
 
             @foreach($albums as $album)
                 <div class="col d-flex flex-column justify-content-center align-items-center mb-4">
