@@ -7,7 +7,7 @@
 
 <hr class="text-light mt-5"/>
 
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center" id="last-albums">
     <div class="d-flex justify-content-center align-items-center text-light text-center">
         <i class="bi bi-music-note-beamed text-warning ms-1" style="font-size: 20px"></i>
         <h5>آخرین آلبوم ها</h5>
@@ -26,6 +26,11 @@
         transform: translateX(-5px);
     }
 </style>
+
+
+<div class="d-flex justify-content-center align-items-center mt-3">
+    <p class="text-light">جدید ترین آلبوم های منتشر شده را در اینجا ببینید</p>
+</div>
 
 <div class="swiper albumSwiper mt-5" style="height: 450px">
     <div class="swiper-wrapper" style="height: 300px;">

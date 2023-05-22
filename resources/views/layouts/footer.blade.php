@@ -21,25 +21,19 @@
             <div class="row text-center">
                 <div class="col-6 col-md-6">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">لینک ها</a>
-                        </li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">آخرین آلبوم
+                        <li class="nav-item mb-2"><a href="#last-albums" class="nav-link p-0 text-muted text-nowrap">آخرین آلبوم
                                 ها</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">آخرین آهنگ
+                        <li class="nav-item mb-2"><a href="#last-songs" class="nav-link p-0 text-muted text-nowrap">آخرین آهنگ
                                 ها</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">آخرین ویدئو
+                        <li class="nav-item mb-2"><a href="#last-artists" class="nav-link p-0 text-muted text-nowrap">آخرین آرتیست
                                 ها</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-6">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">دسترسی
-                                سریع</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">تماس با ما</a>
                         </li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">درباره ما</a>
-                        </li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">تبلیغات</a>
                         </li>
                     </ul>
                 </div>

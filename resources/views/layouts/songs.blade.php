@@ -7,12 +7,13 @@
 
 <hr class="text-light mt-5"/>
 
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center" id="last-songs">
     <div class="d-flex justify-content-center align-items-center text-light text-center">
         <i class="bi bi-music-note-beamed text-warning ms-1" style="font-size: 20px"></i>
         <h5>آخرین موزیک ها</h5>
     </div>
-    <a href="{{ route('song.all') }}" id="more" class="d-flex justify-content-center align-items-center text-light p-1 text-decoration-none">
+    <a href="{{ route('song.all') }}" id="more"
+       class="d-flex justify-content-center align-items-center text-light p-1 text-decoration-none">
         <small class="text-warning">همه موزیک ها</small>
         <i class="bi bi-arrow-left text-warning me-1 mt-1" id="more-icon" style="font-size: 18px;"></i>
     </a>
@@ -27,13 +28,18 @@
     }
 </style>
 
+<div class="d-flex justify-content-center align-items-center mt-3">
+    <p class="text-light">جدید ترین موزیک های روز را از اینجا گوش فرا دهید</p>
+</div>
+
 <div class="swiper songSwiper mt-5" style="height: 450px">
     <div class="swiper-wrapper" style="height: 300px;">
 
         @foreach(\App\Models\Song::latest()->take(10)->get() as $song)
             <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
                 <a href="{{ route('song', $song) }}"><img src="/storage/song-covers/{{ $song->cover }}"
-                                                          class="card-img-top" style="min-height: 15rem; max-height: 10rem" alt="..."></a>
+                                                          class="card-img-top"
+                                                          style="min-height: 15rem; max-height: 10rem" alt="..."></a>
                 <div class="card-body">
                     <a href="{{ route('song', $song) }}" class="card-text text-decoration-none text-light"
                        style="font-size: 16px;">{{ $song->name }}</a>

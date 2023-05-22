@@ -7,12 +7,13 @@
 
 <hr class="text-light mt-5"/>
 
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center" id="last-artists">
     <div class="d-flex justify-content-center align-items-center text-light text-center">
         <i class="bi bi-music-note-beamed text-warning ms-1" style="font-size: 20px"></i>
         <h5>آخرین آرتیست ها</h5>
     </div>
-    <a href="{{ route('artist.all') }}" id="more" class="d-flex justify-content-center align-items-center text-light p-1 text-decoration-none">
+    <a href="{{ route('artist.all') }}" id="more"
+       class="d-flex justify-content-center align-items-center text-light p-1 text-decoration-none">
         <small class="text-warning">همه آرتیست ها</small>
         <i class="bi bi-arrow-left text-warning me-1 mt-1" id="more-icon" style="font-size: 18px;"></i>
     </a>
@@ -27,13 +28,19 @@
     }
 </style>
 
+<div class="d-flex justify-content-center align-items-center mt-3">
+    <p class="text-light">لیستی از آرتیست های سایت را به همراه مشخصات آنها در اینجا مطالعه کنید</p>
+</div>
+
 <div class="swiper artistSwiper mt-5" style="height: 450px">
     <div class="swiper-wrapper" style="height: 300px;">
 
         @foreach(\App\Models\Artist::latest()->take(10)->get() as $artist)
             <div class="card bg-dark text-light swiper-slide" style="min-width: 15rem; max-width: 15rem;">
                 <a href="{{ route('artist', $artist) }}"><img src="/storage/artist-images/{{ $artist->image }}"
-                                                              class="card-img-top" style="min-height: 15rem; max-height: 10rem" alt="..."></a>
+                                                              class="card-img-top"
+                                                              style="min-height: 15rem; max-height: 10rem"
+                                                              alt="..."></a>
                 <div class="card-body">
                     <a href="{{ route('artist', $artist) }}" class="card-text text-decoration-none text-light"
                        style="font-size: 16px;">{{ $artist->name }}</a>
