@@ -1,6 +1,14 @@
 <section class="container pt-0">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
+{{--            @php--}}
+{{--                $likedSongs = \App\Models\Like::select('song_id', \Illuminate\Support\Facades\DB::raw('COUNT(*) as like_count'))--}}
+{{--        ->groupBy('song_id')--}}
+{{--        ->orderByDesc('like_count')--}}
+{{--        ->limit(5)--}}
+{{--        ->get();--}}
+{{--                dd($likedSongs);--}}
+{{--            @endphp--}}
             <div class="carousel-item active">
                 <a href="./pages/music.html">
                     <img src="images/zedbazi.jpg" class="col  d-block img-fluid ax w-100 opacity-100" alt="...">

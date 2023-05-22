@@ -6,13 +6,40 @@
             <div class="col d-flex flex-column justify-content-center align-items-center mb-4">
                 <h2 class="text-center text-warning mb-4">موزیک پلیر</h2>
                 <audio id="audio-player" src=""></audio>
-                <div class="d-flex justify-content-center align-items-center border border-warning rounded rounded-circle bg-dark text-light m-0"
-                     style="width: 180px; height: 180px;">
-                    <img src="/storage/song-covers/{{ $song->cover }}" alt="song cover" class="w-100 h-100 rounded rounded-circle">
+                <div
+                    class="d-flex justify-content-center align-items-center border border-warning rounded rounded-circle bg-dark text-light m-0"
+                    style="width: 180px; height: 180px;">
+                    <img src="/storage/song-covers/{{ $song->cover }}" alt="song cover"
+                         class="w-100 h-100 rounded rounded-circle">
                 </div>
                 <div class="text-center text-light mt-4 mb-4" id="track" data-src="/storage/musics/{{ $song->music }}">
                     <p class="h5">{{ $song->name }}</p>
                     <p class="text-muted h6">{{ $song->artist->name }}</p>
+                    @auth
+                        @php
+                            $like = \App\Models\Like::where('user_id', \Illuminate\Support\Facades\Auth::id())
+                                ->where('song_id', $song->id)
+                                ->first();
+                        @endphp
+                        @if($like)
+                            <a href="">
+                                <i class="bi bi-heart-fill text-danger" style="font-size: 25px"></i>
+                            </a>
+                        @else
+                            <a href="">
+                                <i class="bi bi-heart text-danger" style="font-size: 25px"></i>
+                            </a>
+                        @endif
+                    @else
+                        <div class="btn-group dropend">
+                            <i class="bi bi-heart text-danger" style="font-size: 25px" type="button"
+                               id="defaultDropdown"
+                               data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false"></i>
+                            <div class="dropdown-menu bg-dark border-secondary" aria-labelledby="defaultDropdown"><a
+                                    href="{{ route('login') }}" style="font-size: 13px"
+                                    class="dropdown-item text-light">برای لایک کردن وارد سایت شوید</a></div>
+                        </div>
+                    @endauth
                 </div>
                 <div class="d-flex justify-content-center">
                     <a class="btn btn-dark border me-2 ms-2" id="play-pause-btn"><i class="bi bi-play"></i></a>
@@ -34,7 +61,8 @@
 @endsection
 
 @section('scripts')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
           integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script>
