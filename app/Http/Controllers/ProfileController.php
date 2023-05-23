@@ -16,7 +16,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile.index', ['user' => auth()->user()]);
+        return view('account.setting.index', ['user' => auth()->user()]);
     }
 
     /**
@@ -64,5 +64,10 @@ class ProfileController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Password updated successfully.');
+    }
+
+    public function account()
+    {
+        return view('account.index');
     }
 }

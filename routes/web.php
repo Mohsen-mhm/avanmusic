@@ -3,6 +3,7 @@
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SongController;
@@ -25,8 +26,16 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('setting', ProfileController::class)->only(['index', 'update'])->middleware(['auth']);
-Route::post('setting/change-password', [ProfileController::class, 'changePassword'])->middleware(['auth'])->name('setting.change.password');
+Route::middleware(['auth'])->prefix('account')->group(function () {
+    Route::get('/', [ProfileController::class, 'account'])->name('account.home');
+
+    Route::resource('playlists', PlaylistController::class)->except(['show']);
+    Route::post('playlists/{playlist}/add-song/{song}', [PlaylistController::class, 'addSong'])->name('playlists.add');
+    Route::post('playlists/{playlist}/remove-song/{song}', [PlaylistController::class, 'removeSong'])->name('playlists.remove');
+
+    Route::resource('setting', ProfileController::class)->only(['index', 'update']);
+    Route::post('setting/change-password', [ProfileController::class, 'changePassword'])->name('setting.change.password');
+});
 
 Route::get('songs', [SongController::class, 'all'])->name('song.all');
 Route::get('song/{slug}', [SongController::class, 'index'])->name('song');
