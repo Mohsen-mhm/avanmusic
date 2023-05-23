@@ -72,7 +72,7 @@
                         @if(! $isAvailableInPlaylist)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $song->name }}</td>
+                                <td><a href="{{ route('song', $song) }}">{{ $song->name }}</a></td>
                                 <td>
                                     <button
                                         onclick="event.preventDefault(); document.querySelector('#song-{{ $song->id }}').submit()"
@@ -120,7 +120,7 @@
                     @foreach($playlist->songs as $song)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ $song->name }}</td>
+                            <td><a href="{{ route('song', $song) }}">{{ $song->name }}</a></td>
                             <td>
                                 <button
                                     onclick="event.preventDefault(); document.querySelector('#song-{{ $song->id }}').submit()"
