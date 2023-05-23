@@ -26,6 +26,8 @@
                         <td>
                             <a href="{{ route('playlists.edit', $playlist->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>
+                            <a href="{{ route('playlists.show', $playlist->id) }}"
+                               class="btn btn-sm btn-warning">نمایش</a>
                             <button
                                 onclick="event.preventDefault(); document.querySelector('#playlist-{{ $playlist->id }}').submit()"
                                 class="btn btn-sm btn-danger">حذف

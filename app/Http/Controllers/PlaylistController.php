@@ -78,6 +78,13 @@ class PlaylistController extends Controller
         return back();
     }
 
+    public function show(string $id)
+    {
+        $playlist = Playlist::find($id);
+
+        return view('account.playlists.show', compact('playlist'));
+    }
+
     public function addSong($playlistId, $songId)
     {
         $song = Song::find($songId);

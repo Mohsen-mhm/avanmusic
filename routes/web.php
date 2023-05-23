@@ -29,7 +29,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->prefix('account')->group(function () {
     Route::get('/', [ProfileController::class, 'account'])->name('account.home');
 
-    Route::resource('playlists', PlaylistController::class)->except(['show']);
+    Route::resource('playlists', PlaylistController::class);
     Route::post('playlists/{playlist}/add-song/{song}', [PlaylistController::class, 'addSong'])->name('playlists.add');
     Route::post('playlists/{playlist}/remove-song/{song}', [PlaylistController::class, 'removeSong'])->name('playlists.remove');
 
