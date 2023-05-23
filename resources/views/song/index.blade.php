@@ -22,21 +22,27 @@
                                 ->first();
                         @endphp
                         @if($like)
-                            <a href="">
+                            <a href="javascript:void(0)" onclick="event.preventDefault(); document.querySelector('#dislike-form').submit();">
                                 <i class="bi bi-heart-fill text-danger" style="font-size: 25px"></i>
                             </a>
+                            <form action="{{ route('song.dislike', $song) }}" id="dislike-form" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         @else
-                            <a href="">
+                            <a href="javascript:void(0)" onclick="event.preventDefault(); document.querySelector('#like-form').submit();">
                                 <i class="bi bi-heart text-danger" style="font-size: 25px"></i>
                             </a>
+                            <form action="{{ route('song.like', $song) }}" id="like-form" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         @endif
                     @else
-                        <div class="btn-group dropend">
+                        <div class="btn-group">
                             <i class="bi bi-heart text-danger" style="font-size: 25px" type="button"
                                id="defaultDropdown"
                                data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false"></i>
                             <div class="dropdown-menu bg-dark border-secondary" aria-labelledby="defaultDropdown"><a
-                                    href="{{ route('login') }}" style="font-size: 13px"
+                                    href="{{ route('login') }}" style="font-size: 13px;"
                                     class="dropdown-item text-light">برای لایک کردن وارد سایت شوید</a></div>
                         </div>
                     @endauth
