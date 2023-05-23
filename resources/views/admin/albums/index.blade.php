@@ -25,7 +25,7 @@
                         <td>{{ $album->name }}</td>
                         <td><small>{{ $album->artist->name }}</small></td>
                         <td><small>{{ $album->genre->name }}</small></td>
-                        <td><small>{{ $album->release_date }}</small></td>
+                        <td><small>{{ \Illuminate\Support\Carbon::parse($album->release_date)->format('Y/m/d') }}</small></td>
                         <td>
                             <a href="{{ route('admin.albums.edit', $album->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>

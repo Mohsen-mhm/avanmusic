@@ -34,7 +34,7 @@ class AlbumController extends Controller
             'name' => ['required', 'string', 'max:50'],
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'genre_id' => ['required', 'string', 'exists:genres,id'],
-            'release_date' => ['required', 'date_format:Y-m-d H:i'],
+            'release_date' => ['required', 'date_format:Y-m-d'],
             'cover_image' => ['required', 'file', 'max:512'],
         ]);
 
@@ -71,7 +71,7 @@ class AlbumController extends Controller
             'name' => ['required', 'string', 'max:50'],
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'genre_id' => ['required', 'string', 'exists:genres,id'],
-            'release_date' => ['required', 'date_format:Y-m-d H:i'],
+            'release_date' => ['required', 'date_format:Y-m-d'],
             'cover_image' => ['file', 'max:512'],
         ]);
 

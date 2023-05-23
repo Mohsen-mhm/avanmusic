@@ -113,7 +113,7 @@
         flatpickr("#release_date", {
             theme: "dark",
             enableTime: true,
-            dateFormat: "Y-m-d H:i",
+            dateFormat: "Y-m-d",
             time_24hr: true,
             timezone: "Asia/Tehran",
             defaultDate: new Date(),
