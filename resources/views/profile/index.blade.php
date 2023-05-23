@@ -18,7 +18,7 @@
                 @endforeach
             @endif
 
-            <form action="{{ route('profile.update', $user->id) }}" enctype="multipart/form-data" method="POST">
+            <form action="{{ route('setting.update', $user->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -53,7 +53,7 @@
             <hr class="text-light my-5">
             <h5 class="text-light text-center mb-5">-تغییر رمز عبور-</h5>
 
-            <form action="{{ route('profile.change.password') }}" method="POST">
+            <form action="{{ route('setting.change.password') }}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-6 mb-3">

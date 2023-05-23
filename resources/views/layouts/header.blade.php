@@ -33,7 +33,7 @@
 
                     <li>
                         <a class="dropdown-item text-light text-center"
-                           href="{{ route('profile.index') }}">پروفایل</a>
+                           href="{{ route('setting.index') }}">تنظیمات</a>
                     </li>
 
                     <li>

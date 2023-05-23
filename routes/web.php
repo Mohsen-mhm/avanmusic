@@ -25,8 +25,8 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('profile', ProfileController::class)->only(['index', 'update'])->middleware(['auth']);
-Route::post('profile/change-password', [ProfileController::class, 'changePassword'])->middleware(['auth'])->name('profile.change.password');
+Route::resource('setting', ProfileController::class)->only(['index', 'update'])->middleware(['auth']);
+Route::post('setting/change-password', [ProfileController::class, 'changePassword'])->middleware(['auth'])->name('setting.change.password');
 
 Route::get('songs', [SongController::class, 'all'])->name('song.all');
 Route::get('song/{slug}', [SongController::class, 'index'])->name('song');

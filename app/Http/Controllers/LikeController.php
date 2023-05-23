@@ -28,7 +28,7 @@ class LikeController extends Controller
         ])->first();
 
         Like::destroy($like->id);
-        
+
         return back();
     }
 }
