@@ -3,9 +3,10 @@
 @section('content')
     <div class="container" dir="rtl">
         <div class="row justify-content-center">
-            <div class="w-100 d-flex justify-content-center align-items-center mb-3">
+            <div class="w-100 d-flex justify-content-between align-items-center mb-3">
                 <img src="/storage/avatars/{{ $user->avatar ? : 'default-avatar.png' }}" alt="آواتار"
                      style="width: 120px; height: 120px; border-radius: 100%">
+                <a href="{{ route('account.home') }}" class="btn btn-sm btn-secondary w-auto">بازگشت</a>
             </div>
 
             @if($errors->any())

@@ -33,7 +33,7 @@
 
                     <li>
                         <a class="dropdown-item text-light text-center"
-                           href="{{ route('setting.index') }}">تنظیمات</a>
+                           href="{{ route('account.home') }}">حساب کاربری</a>
                     </li>
 
                     <li>
