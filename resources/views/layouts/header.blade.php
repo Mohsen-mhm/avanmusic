@@ -28,19 +28,25 @@
                     @endif
                 @else
                     <li>
-                        <a class="dropdown-item text-light text-center" href="{{ route('home') }}">صفحه اصلی</a>
+                        <a class="dropdown-item text-light text-center mt-1 mb-1" href="{{ route('home') }}">صفحه
+                            اصلی</a>
                     </li>
 
                     <li>
-                        <a class="dropdown-item text-light text-center"
+                        <a class="dropdown-item text-light text-center mt-1 mb-1"
                            href="{{ route('account.home') }}">حساب کاربری</a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-light text-center mt-1 mb-1"
+                           href="{{ route('cart') }}">سبد خرید</a>
                     </li>
 
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
-                    <li><a class="dropdown-item text-light text-center" href="#" onclick="event.preventDefault();
+                    <li><a class="dropdown-item text-light text-center mt-1 mb-1" href="#" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">خروج</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
