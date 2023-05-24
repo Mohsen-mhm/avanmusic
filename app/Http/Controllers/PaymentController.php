@@ -12,11 +12,11 @@ class PaymentController extends Controller
         $cartItem = Cart::all();
         if ($cartItem->count()) {
             $price = $cartItem->sum(function ($cart) {
-                return $cart['product']->price * $cart['quantity'];
+                return $cart['song']->price;
             });
 
-            $orderItems = $cartItem->mapWithKeys(function ($cart) {
-                return [$cart['product']->id => ['quantity' => $cart['quantity']]];
+            $orderItems = $cartItem->map(function ($cart) {
+                return $cart['song']->id;
             });
 
             $order = auth()->user()->orders()->create([
@@ -24,7 +24,7 @@ class PaymentController extends Controller
                 'price' => $price
             ]);
 
-            $order->products()->attach($orderItems);
+            $order->songs()->attach($orderItems);
 
             return view('payment.index');
         }

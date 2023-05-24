@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
@@ -48,3 +50,12 @@ Route::get('album/{slug}', [AlbumController::class, 'index'])->name('album');
 
 Route::get('artists', [ArtistController::class, 'all'])->name('artist.all');
 Route::get('artist/{slug}', [ArtistController::class, 'index'])->name('artist');
+
+Route::prefix('/cart')->controller(CartController::class)->group(function () {
+    Route::get('/', 'cart')->name('cart');
+    Route::post('/add/{song}', 'addToCart')->name('addToCart');
+
+    Route::delete('/delete/{cart}', 'deleteFromCart')->name('cart.destroy');
+});
+Route::post('payment', [PaymentController::class, 'payment'])->middleware('auth')->name('cart.payment');
+

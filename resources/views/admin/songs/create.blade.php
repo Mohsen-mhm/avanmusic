@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-2">
+                <div class="row mt-2 d-flex align-items-center">
                     <div class="col-6 mb-3">
                         <label for="single" class="text-muted">سینگل ترک:</label>
                         <input type="checkbox" id="single" name="single" value="1"
@@ -71,9 +71,21 @@
                         </span>
                         @enderror
                     </div>
+                    <div class="col-6 mb-3">
+                        <label for="price" class="text-muted">قیمت (تومان):</label>
+                        <input id="price" type="number"
+                               class="border-secondary bg-dark text-light form-control @error('price') is-invalid @enderror mt-2"
+                               name="price" value="{{ old('price') }}" required autocomplete="price"
+                               autofocus>
+                        @error('price')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
                 </div>
 
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-6 mb-3">
                         <label for="artist_id" class="text-muted">آرتیست:</label>
                         <select id="artist_id" name="artist_id"

@@ -27,6 +27,8 @@ return new class extends Migration {
             $table->string('music');
             $table->string('cover')->nullable();
 
+            $table->integer('price');
+
             $table->timestamps();
         });
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Cart\Cart;
-use App\Models\Product;
+use App\Models\Song;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
@@ -23,43 +23,15 @@ class CartController extends Controller
         return view('cart');
     }
 
-    /**
-     * @param Product $product
-     * @return Application|RedirectResponse|Redirector
-     */
-    public function addToCart(Product $product)
+
+    public function addToCart(Song $song)
     {
-        if (Cart::has($product)) {
-            if (Cart::count($product) < $product->inventory)
-                Cart::update($product, 1);
+        if (Cart::has($song)) {
+            return back()->withErrors('این موزیک در سبد خرید شما وجود دارد');
         } else {
-            Cart::put(
-                [
-                    'quantity' => 1,
-                ],
-                $product
-            );
+            Cart::put($song);
         }
         return redirect('/cart');
-    }
-
-    /**
-     * @param Request $request
-     * @return Application|ResponseFactory|Response
-     */
-    public function quantityChange(Request $request)
-    {
-        $data = $request->validate([
-            'quantity' => 'required',
-            'id' => 'required',
-        ]);
-        if (Cart::has($data['id'])) {
-            Cart::update($data['id'], [
-                'quantity' => $data['quantity']
-            ]);
-            return response(['status' => 'success']);
-        }
-        return response(['status' => 'error'], 404);
     }
 
     /**

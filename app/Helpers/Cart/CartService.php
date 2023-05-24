@@ -20,16 +20,16 @@ class CartService
      * @param $obj
      * @return $this
      */
-    public function put(array $value, $obj = null)
+    public function put($obj = null)
     {
         if (!is_null($obj) && $obj instanceof Model) {
-            $value = array_merge($value, [
+            $value = [
                 'id' => Str::random(10),
                 'subject_id' => $obj->id,
                 'subject_type' => get_class($obj)
-            ]);
+            ];
         } elseif (!isset($value['id'])) {
-            $value = array_merge($value, ['id' => Str::random(10)]);
+            $value = ['id' => Str::random(10)];
         }
         $this->cart->put($value['id'], $value);
         session()->put('cart', $this->cart);

@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
-    <div class="container px-3 my-5 clearfix">
+    <div class="container px-3 my-5 clearfix" dir="rtl">
         <div class="row">
             <div class="col-lg-12 p-5 rounded shadow-sm mb-5 text-light" style="background-color: #131313;">
 
@@ -14,12 +14,6 @@
                                 <tr>
                                     <th scope="col" class="border-0 bg-dark">
                                         <div class="p-2 px-3 text-uppercase">نام محصول</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-dark">
-                                        <div class="py-2 text-uppercase text-center">قیمت واحد</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-dark">
-                                        <div class="py-2 text-uppercase text-center">تعداد</div>
                                     </th>
                                     <th scope="col" class="border-0 bg-dark">
                                         <div class="py-2 text-uppercase text-center">قیمت نهایی</div>
@@ -42,41 +36,30 @@
 
                         <tbody>
                         @foreach(\App\Helpers\Cart\Cart::all() as $cart)
-                            @if(isset($cart['product']))
+                            @if(isset($cart['song']))
                                 @php
-                                    $product = $cart['product'];
+                                    $song = $cart['song'];
                                 @endphp
                                 <tr>
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
                                             <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0">{{ $product->title }}</h5>
+                                                <h6 class="mb-0">{{ $song->name }}</h6>
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="border-0 align-middle text-center">
-                                        <strong>{{ $product->price }} تومان</strong></td>
-                                    <td class="border-0 align-middle text-center d-flex justify-content-center">
-                                        <select onchange="changeQuantity(event,'{{ $cart['id'] }}')" name="quantity"
-                                                id="quantity" class="form-select w-50 mt-1 bg-dark text-light">
-                                            @foreach(range(1, $product->inventory) as $item)
-                                                <option
-                                                    value="{{ $item }}" {{ $cart['quantity'] == $item ? 'selected' : '' }}>{{ $item }}</option>
-                                            @endforeach
-                                        </select>
-                                    </td>
                                     <td class="border-0 align-middle  text-center">
-                                        <strong>{{ $product->price * $cart['quantity'] }} تومان</strong></td>
+                                        <strong>{{ $song->price }} تومان</strong></td>
                                     <td class="border-0 align-middle">
                                         <form action="{{ route('cart.destroy', $cart['id']) }}" method="post"
-                                              id="delete-product-{{ $product->id }}">
+                                              id="delete-song-{{ $song->id }}">
                                             @csrf
                                             @method('delete')
                                         </form>
-                                        <h4 href="#" class="text-center"><a href="#"
-                                                                            onclick="event.preventDefault(); document.getElementById('delete-product-{{ $product->id }}').submit()"
+                                        <h4 class="text-center"><a href="javascript:void(0)"
+                                                                            onclick="event.preventDefault(); document.getElementById('delete-song-{{ $song->id }}').submit()"
                                                                             class="text-danger mt-2"><i
-                                                    class="fa fa-plus mt-2" style="transform: rotate(45deg)"></i></a></h4>
+                                                    class="bi bi-trash3-fill mt-2"></i></a></h4>
                                     </td>
                                 </tr>
                             @endif
@@ -91,13 +74,13 @@
                         <div class="d-flex justify-content-between">
                             @php
                                 $totalPrice = \App\Helpers\Cart\Cart::all()->sum(function ($cart){
-                                    return $cart['product']->price * $cart['quantity'];
+                                    return $cart['song']->price;
                                 });
                             @endphp
                             <span>قیمت نهایی : &nbsp; <b>{{ $totalPrice }} تومان</b></span>
 
                             <form action="{{ route('cart.payment') }}" method="POST" id="cart-payment">@csrf</form>
-                            <button onclick="$('#cart-payment').submit()" class="btn btn-outline-warning">پرداخت سبد خرید
+                            <button onclick="document.querySelector('#cart-payment').submit()" class="btn btn-outline-warning">پرداخت سبد خرید
                             </button>
                         </div>
                     @endif
@@ -108,25 +91,9 @@
 
 @endsection
 
-@section('script')
-    <script>
-        function changeQuantity(event, id, cartName) {
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-                    'Content-Type': 'application/json'
-                },
-                type: 'patch',
-                url: 'cart/quantity/change',
-                data: JSON.stringify({
-                    id: id,
-                    quantity: event.target.value,
-                    cart: cartName,
-                }),
-                success: function (res) {
-                    location.reload();
-                }
-            });
-        }
-    </script>
+@section('styles')
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+          integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 @endsection

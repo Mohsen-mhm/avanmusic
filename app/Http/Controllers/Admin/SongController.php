@@ -35,6 +35,7 @@ class SongController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'single' => ['boolean', 'in:0,1'],
+            'price' => ['required', 'numeric'],
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'album_id' => ['string'],
             'music' => ['required', 'file'],
@@ -90,6 +91,7 @@ class SongController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'single' => ['boolean', 'in:0,1'],
+            'price' => ['required', 'numeric'],
             'artist_id' => ['required', 'string', 'exists:artists,id'],
             'album_id' => ['string'],
             'music' => ['file'],

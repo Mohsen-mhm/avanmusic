@@ -14,6 +14,7 @@ class Song extends Model
         'name',
         'slug',
         'single',
+        'price',
         'artist_id',
         'album_id',
         'music',
@@ -43,6 +44,11 @@ class Song extends Model
     public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
     }
 
     public function sluggable(): array

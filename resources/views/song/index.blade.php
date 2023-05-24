@@ -2,6 +2,15 @@
 
 @section('content')
     <div class="container" dir="rtl">
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">
+                    <ul class="list-group p-2">
+                        <li>{{ $error }}</li>
+                    </ul>
+                </div>
+            @endforeach
+        @endif
         <div class="row justify-content-center">
             <div class="col d-flex flex-column justify-content-center align-items-center mb-4">
                 <h2 class="text-center text-warning mb-4">موزیک پلیر</h2>
@@ -22,14 +31,17 @@
                                 ->first();
                         @endphp
                         @if($like)
-                            <a href="javascript:void(0)" onclick="event.preventDefault(); document.querySelector('#dislike-form').submit();">
+                            <a href="javascript:void(0)"
+                               onclick="event.preventDefault(); document.querySelector('#dislike-form').submit();">
                                 <i class="bi bi-heart-fill text-danger" style="font-size: 25px"></i>
                             </a>
-                            <form action="{{ route('song.dislike', $song) }}" id="dislike-form" method="POST" class="d-none">
+                            <form action="{{ route('song.dislike', $song) }}" id="dislike-form" method="POST"
+                                  class="d-none">
                                 @csrf
                             </form>
                         @else
-                            <a href="javascript:void(0)" onclick="event.preventDefault(); document.querySelector('#like-form').submit();">
+                            <a href="javascript:void(0)"
+                               onclick="event.preventDefault(); document.querySelector('#like-form').submit();">
                                 <i class="bi bi-heart text-danger" style="font-size: 25px"></i>
                             </a>
                             <form action="{{ route('song.like', $song) }}" id="like-form" method="POST" class="d-none">
@@ -50,6 +62,10 @@
                 <div class="d-flex justify-content-center">
                     <a class="btn btn-dark border me-2 ms-2" id="play-pause-btn"><i class="bi bi-play"></i></a>
                 </div>
+                <form action="{{ route('addToCart', $song) }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-warning mt-3">خرید این موزیک ({{ $song->price }} تومان)</button>
+                </form>
                 <hr class="w-100 text-light mt-5 mb-4"/>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <h2 class="text-warning mb-5">متن موزیک</h2>
