@@ -21,6 +21,7 @@
                             <a class="dropdown-item text-light text-center" href="{{ route('login') }}">ورود</a>
                         </li>
                     @endif
+                
                     @if (Route::has('register'))
                         <li>
                             <a class="dropdown-item text-light text-center" href="{{ route('register') }}">عضویت</a>
