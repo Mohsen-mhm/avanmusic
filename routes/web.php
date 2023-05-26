@@ -60,7 +60,10 @@ Route::prefix('/cart')->controller(CartController::class)->group(function () {
 
 Route::middleware(['auth'])->prefix('payment')->group(function () {
     Route::post('/', [PaymentController::class, 'payment'])->name('cart.payment');
-    Route::post('success', [PaymentController::class, 'paymentSuccess'])->name('cart.payment.success');
-    Route::post('fail', [PaymentController::class, 'paymentFail'])->name('cart.payment.fail');
+    Route::post('{order}/success', [PaymentController::class, 'paymentSuccess'])->name('cart.payment.success');
+    Route::post('{order}/fail', [PaymentController::class, 'paymentFail'])->name('cart.payment.fail');
+    Route::post('{order}/cancel', [PaymentController::class, 'paymentCancel'])->name('cart.payment.cancel');
+
+    Route::get('callback/{paymentRes}', [PaymentController::class, 'callback'])->name('payment.callback');
 });
 

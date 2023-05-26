@@ -6,13 +6,20 @@
         <button class="btn btn-success ms-2 me-2" onclick="document.querySelector('#payment-success').submit()">پرداخت
             موفق
         </button>
-        <form action="{{ route('cart.payment.success') }}" method="POST" id="payment-success"
+        <form action="{{ route('cart.payment.success', $order->id) }}" method="POST" id="payment-success"
               class="d-none">@csrf</form>
 
 
         <button class="btn btn-danger ms-2 me-2" onclick="document.querySelector('#payment-fail').submit()">پرداخت
             ناموفق
         </button>
-        <form action="{{ route('cart.payment.fail') }}" method="POST" id="payment-fail" class="d-none">@csrf</form>
+        <form action="{{ route('cart.payment.fail', $order->id) }}" method="POST" id="payment-fail"
+              class="d-none">@csrf</form>
+
+
+        <button class="btn btn-warning ms-2 me-2" onclick="document.querySelector('#payment-cancel').submit()">لغو پرداخت
+        </button>
+        <form action="{{ route('cart.payment.cancel', $order->id) }}" method="POST" id="payment-cancel"
+              class="d-none">@csrf</form>
     </div>
 @endsection

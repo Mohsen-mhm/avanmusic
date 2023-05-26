@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+    public const PAIL = 'paid';
+    public const UN_PAIL = 'unpaid';
+    public const CANCELED = 'canceled';
 
     protected $fillable = ['user_id', 'price', 'status'];
 
