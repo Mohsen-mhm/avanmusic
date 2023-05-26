@@ -31,4 +31,14 @@ class PaymentController extends Controller
 
         return back();
     }
+
+    public function paymentSuccess()
+    {
+        dd('success');
+    }
+
+    public function paymentFail()
+    {
+        dd('fail');
+    }
 }

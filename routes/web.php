@@ -57,5 +57,10 @@ Route::prefix('/cart')->controller(CartController::class)->group(function () {
 
     Route::delete('/delete/{cart}', 'deleteFromCart')->name('cart.destroy');
 });
-Route::post('payment', [PaymentController::class, 'payment'])->middleware('auth')->name('cart.payment');
+
+Route::middleware(['auth'])->prefix('payment')->group(function () {
+    Route::post('/', [PaymentController::class, 'payment'])->name('cart.payment');
+    Route::post('success', [PaymentController::class, 'paymentSuccess'])->name('cart.payment.success');
+    Route::post('fail', [PaymentController::class, 'paymentFail'])->name('cart.payment.fail');
+});
 
