@@ -4,6 +4,7 @@ use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
@@ -34,6 +35,9 @@ Route::middleware(['auth'])->prefix('account')->group(function () {
     Route::resource('playlists', PlaylistController::class);
     Route::post('playlists/{playlist}/add-song/{song}', [PlaylistController::class, 'addSong'])->name('playlists.add');
     Route::post('playlists/{playlist}/remove-song/{song}', [PlaylistController::class, 'removeSong'])->name('playlists.remove');
+
+    Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
     Route::resource('setting', ProfileController::class)->only(['index', 'update']);
     Route::post('setting/change-password', [ProfileController::class, 'changePassword'])->name('setting.change.password');
