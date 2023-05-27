@@ -30,18 +30,12 @@
                                            autoplay></lottie-player>
                             <h3>پرداخت موفق بود</h3>
                             <h6>شماره پیگیری: {{ $payment->resnumber }}</h6>
-                            {{--                        <a href="{{ route('profile.orders') }}"--}}
-                            {{--                           class="btn btn-warning">{{ __('titles.orders_list') }}</a>--}}
-
                         @else
-
                             <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ph09qu41.json"
                                            background="transparent" speed="0.8" style="width: 250px; height: 250px;"
                                            autoplay></lottie-player>
                             <h3>پرداخت ناموفق بود</h3>
                             <h6>شماره پیگیری: {{ $payment->resnumber }}</h6>
-                            {{--                        <a href="{{ route('profile.orders') }}"--}}
-                            {{--                           class="btn btn-warning">{{ __('titles.orders_list') }}</a>--}}
                         @endif
                     </div>
                 </div>
