@@ -57,8 +57,8 @@
                                             @method('delete')
                                         </form>
                                         <h4 class="text-center"><a href="javascript:void(0)"
-                                                                            onclick="event.preventDefault(); document.getElementById('delete-song-{{ $song->id }}').submit()"
-                                                                            class="text-danger mt-2"><i
+                                                                   onclick="event.preventDefault(); document.getElementById('delete-song-{{ $song->id }}').submit()"
+                                                                   class="text-danger mt-2"><i
                                                     class="bi bi-trash3-fill mt-2"></i></a></h4>
                                     </td>
                                 </tr>
@@ -80,7 +80,8 @@
                             <span>قیمت نهایی : &nbsp; <b>{{ $totalPrice }} تومان</b></span>
 
                             <form action="{{ route('cart.payment') }}" method="POST" id="cart-payment">@csrf</form>
-                            <button onclick="document.querySelector('#cart-payment').submit()" class="btn btn-outline-warning">پرداخت سبد خرید
+                            <button onclick="document.querySelector('#cart-payment').submit()"
+                                    class="btn btn-outline-warning">پرداخت سبد خرید
                             </button>
                         </div>
                     @endif

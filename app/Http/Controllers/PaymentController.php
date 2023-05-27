@@ -47,6 +47,10 @@ class PaymentController extends Controller
             'status' => 1,
         ]);
 
+        $cartItem = Cart::all();
+        foreach ($cartItem as $item)
+            Cart::delete($item['id']);
+
         return redirect()->route('payment.callback', ['paymentRes' => $payment->resnumber]);
     }
 
