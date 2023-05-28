@@ -12,6 +12,7 @@
                     <th scope="col">ردیف</th>
                     <th scope="col">نام</th>
                     <th scope="col">پخش</th>
+                    <th scope="col">دانلود</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,9 @@
                                data-src="/storage/musics/{{ $song->music }}">
                                 <i class="bi bi-play"></i>
                             </a>
+                        </td>
+                        <td>
+                            <a href="{{ route('orders.song.download', $song) }}" class="btn btn-sm btn-success">دانلود</a>
                         </td>
                     </tr>
                 @endforeach

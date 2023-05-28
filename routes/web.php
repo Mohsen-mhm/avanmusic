@@ -38,6 +38,7 @@ Route::middleware(['auth'])->prefix('account')->group(function () {
 
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+    Route::get('orders/song/{song}/download', [OrderController::class, 'download'])->name('orders.song.download');
 
     Route::resource('setting', ProfileController::class)->only(['index', 'update']);
     Route::post('setting/change-password', [ProfileController::class, 'changePassword'])->name('setting.change.password');

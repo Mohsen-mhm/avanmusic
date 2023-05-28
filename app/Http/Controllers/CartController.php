@@ -27,11 +27,11 @@ class CartController extends Controller
     public function addToCart(Song $song)
     {
         if (Cart::has($song)) {
-            return back()->withErrors('این موزیک در سبد خرید شما وجود دارد');
+            return redirect()->route('cart');
         } else {
             Cart::put($song);
         }
-        return redirect('/cart');
+        return redirect()->route('cart');
     }
 
     /**

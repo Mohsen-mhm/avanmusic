@@ -62,10 +62,28 @@
                 <div class="d-flex justify-content-center">
                     <a class="btn btn-dark border me-2 ms-2" id="play-pause-btn"><i class="bi bi-play"></i></a>
                 </div>
-                <form action="{{ route('addToCart', $song) }}" method="post">
-                    @csrf
-                    <button type="submit" class="btn btn-outline-warning mt-3">خرید این موزیک ({{ $song->price }} تومان)</button>
-                </form>
+                @auth
+                    @php
+                        $order = auth()->user()->orders()->where('status', 'paid')->first();
+                    @endphp
+                    @if($order && $order->songs->contains('id', $song->id))
+                        <p class="text-success mt-4 mb-0">این موزیک توسط شما خریداری شده است.</p>
+                        <a href="{{ route('orders.song.download', $song) }}"
+                           class="btn btn-success mt-2">دانلود</a>
+                    @else
+                        <form action="{{ route('addToCart', $song) }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-warning mt-3">خرید و دانلود ({{ $song->price }}
+                                تومان)
+                            </button>
+                        </form>
+                    @endif
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-outline-danger mt-3">برای خرید و دانلود وارد سایت شوید
+                        ({{ $song->price }}
+                        تومان)
+                    </a>
+                @endauth
                 <hr class="w-100 text-light mt-5 mb-4"/>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <h2 class="text-warning mb-5">متن موزیک</h2>
