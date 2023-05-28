@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AlbumController;
 use App\Http\Controllers\Admin\ArtistController;
 use App\Http\Controllers\Admin\GenreController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PlaylistController;
 use App\Http\Controllers\Admin\SongController;
 use App\Http\Controllers\Admin\UserController;
@@ -38,3 +39,5 @@ Route::post('songs/remove-stanza/{stanza}', [SongController::class, 'removeStanz
 Route::resource('playlists', PlaylistController::class)->except(['show']);
 Route::post('playlists/{playlist}/add-song/{song}', [PlaylistController::class, 'addSong'])->name('playlists.add');
 Route::post('playlists/{playlist}/remove-song/{song}', [PlaylistController::class, 'removeSong'])->name('playlists.remove');
+
+Route::resource('orders', OrderController::class)->only(['index', 'show']);

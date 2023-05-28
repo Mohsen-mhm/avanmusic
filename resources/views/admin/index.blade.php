@@ -138,5 +138,29 @@
                 </div>
             </a>
         </div>
+        <div class="row justify-content-center">
+            <a href="{{ route('admin.orders.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
+                <div class="row g-0">
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <svg width="50" height="50" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20.5" cy="41.5" r="3.5" fill="#ffc107"/>
+                            <circle cx="37.5" cy="41.5" r="3.5" fill="#ffc107"/>
+                            <path d="M5 6L14 12L19 34H39L44 17H25" stroke="#ffc107" stroke-width="1" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                            <path d="M25 26L32.2727 26L41 26" stroke="#ffc107" stroke-width="1" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="col-md-10" dir="rtl">
+                        <div class="card-body">
+                            <p class="card-text text-light text-decoration-none">سفارشات: <b
+                                    class="text-warning">{{ \App\Models\Order::count() }}</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 @endsection
