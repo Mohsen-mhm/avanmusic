@@ -32,7 +32,7 @@
     <p class="text-light">جدید ترین موزیک های روز را از اینجا گوش فرا دهید</p>
 </div>
 
-<div class="swiper songSwiper mt-5" style="height: 450px">
+<div class="swiper songSwiper mt-5" style="height: 400px">
     <div class="swiper-wrapper" style="height: 300px;">
 
         @foreach(\App\Models\Song::latest()->take(10)->get() as $song)

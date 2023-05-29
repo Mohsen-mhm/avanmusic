@@ -32,7 +32,7 @@
     <p class="text-light">لیستی از آرتیست های سایت را به همراه مشخصات آنها در اینجا مطالعه کنید</p>
 </div>
 
-<div class="swiper artistSwiper mt-5" style="height: 450px">
+<div class="swiper artistSwiper mt-5" style="height: 400px">
     <div class="swiper-wrapper" style="height: 300px;">
 
         @foreach(\App\Models\Artist::latest()->take(10)->get() as $artist)

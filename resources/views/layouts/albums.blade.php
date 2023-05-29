@@ -32,7 +32,7 @@
     <p class="text-light">جدید ترین آلبوم های منتشر شده را در اینجا ببینید</p>
 </div>
 
-<div class="swiper albumSwiper mt-5" style="height: 450px">
+<div class="swiper albumSwiper mt-5" style="height: 400px">
     <div class="swiper-wrapper" style="height: 300px;">
 
         @foreach(\App\Models\Album::latest()->take(10)->get() as $album)
