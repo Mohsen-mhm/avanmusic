@@ -98,6 +98,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="d-flex justify-content-center align-items-center" dir="ltr">
+            {{ $songs->links() }}
+        </div>
 
         <div class="w-100 d-flex justify-content-center">
             <hr class="text-warning w-75 my-5">
