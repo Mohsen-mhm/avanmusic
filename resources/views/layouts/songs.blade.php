@@ -42,7 +42,7 @@
                                                           style="min-height: 15rem; max-height: 10rem" alt="..."></a>
                 <div class="card-body">
                     <a href="{{ route('song', $song) }}" class="card-text text-decoration-none text-light"
-                       style="font-size: 16px;">{{ $song->name }}</a>
+                       style="font-size: 16px; font-family: Arial;">{{ $song->name }}</a>
                 </div>
             </div>
         @endforeach
