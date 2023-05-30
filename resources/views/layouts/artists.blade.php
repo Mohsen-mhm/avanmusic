@@ -46,7 +46,7 @@
                                                               alt="..."></a>
                 <div class="card-body">
                     <a href="{{ route('artist', $artist) }}" class="card-text text-decoration-none text-light"
-                       style="font-size: 18px; font-family: 'Acme';">{{ $artist->name }}</a>
+                       style="font-size: 18px; font-family: 'Vazir','Acme';">{{ $artist->name }}</a>
                 </div>
             </div>
         @endforeach

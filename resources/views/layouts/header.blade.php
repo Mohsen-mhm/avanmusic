@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg">
     <div class="container" dir="rtl">
-        <a class="navbar-brand" style="font-size: 16px" href="{{ route('home') }}">
+        <a class="navbar-brand d-flex justify-content-center align-items-center" style="font-size: 16px" href="{{ route('home') }}">
+            <img src="/images/phonograph-record-transprent-music-logo-png-hd.png" alt="logo" class="ms-2 me-2" style="width: 60px;">
             {{ config('app.name', 'آوان موزیک') }}
         </a>
         <div class="btn-group">
