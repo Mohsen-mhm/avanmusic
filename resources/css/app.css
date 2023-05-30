@@ -4,13 +4,15 @@
     font-family: 'Vazir';
     src: url("/fonts/vazir/Vazir-Bold.ttf");
 }
-*{
+
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Vazir', Arial, serif;
 }
-body{
+
+body {
     background: #212529;
 }
 

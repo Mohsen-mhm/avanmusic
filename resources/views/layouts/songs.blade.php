@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
       integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+</style>
 
 <hr class="text-light mt-5"/>
 
@@ -42,7 +45,7 @@
                                                           style="min-height: 15rem; max-height: 10rem" alt="..."></a>
                 <div class="card-body">
                     <a href="{{ route('song', $song) }}" class="card-text text-decoration-none text-light"
-                       style="font-size: 16px; font-family: Arial;">{{ $song->name }}</a>
+                       style="font-size: 18px; font-family: 'Acme';">{{ $song->name }}</a>
                 </div>
             </div>
         @endforeach
