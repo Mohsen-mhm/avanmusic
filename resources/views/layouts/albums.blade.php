@@ -44,7 +44,7 @@
                                                           class="card-img-top" style="min-height: 15rem; max-height: 10rem" alt="..."></a>
                 <div class="card-body">
                     <a href="{{ route('album', $album) }}" class="card-text text-decoration-none text-light"
-                       style="font-size: 18px; font-family: 'Vazir','Acme';">{{ $album->name }}</a>
+                       style="font-size: 18px; font-family: 'Acme';">{{ $album->name }}</a>
                 </div>
             </div>
         @endforeach
