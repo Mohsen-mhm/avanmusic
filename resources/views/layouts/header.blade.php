@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg">
     <div class="container" dir="rtl">
-        <a class="navbar-brand d-flex justify-content-center align-items-center" style="font-size: 16px" href="{{ route('home') }}">
-            <img src="/images/phonograph-record-transprent-music-logo-png-hd.png" alt="logo" class="ms-2 me-2" style="width: 60px;">
+        <a class="navbar-brand d-flex justify-content-center align-items-center" style="font-size: 16px"
+           href="{{ route('home') }}">
+            <img src="/images/phonograph-record-transprent-music-logo-png-hd.png" alt="logo" class="ms-2 me-2"
+                 style="width: 60px;">
             {{ config('app.name', 'آوان موزیک') }}
         </a>
         <div class="btn-group">
@@ -58,3 +60,46 @@
         </div>
     </div>
 </nav>
+
+
+<section class="container-fluid d-flex justify-content-center bg-secondary">
+
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+        <div class="btn-group py-1" role="group">
+            <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                آلبوم ها
+            </button>
+            <ul class="dropdown-menu border-secondary" style="background: #1a202c">
+                @foreach(\App\Models\Album::latest()->limit(5)->get() as $album)
+                    <li><a class="dropdown-item text-center text-light"
+                           href="{{ route('album', $album->slug) }}">{{ $album->name }}</a></li>
+                @endforeach
+                <li><a class="dropdown-item text-center text-light" href="{{ route('album.all') }}">بیشتر</a></li>
+            </ul>
+        </div>
+        <div class="btn-group py-1" role="group">
+            <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                پادکست ها
+            </button>
+            <ul class="dropdown-menu border-secondary" style="background: #1a202c">
+                <li><a class="dropdown-item text-center text-light" href="{{ route('album.all') }}">بیشتر</a></li>
+            </ul>
+        </div>
+        <div class="btn-group py-1" role="group">
+            <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                موزیک ها
+            </button>
+            <ul class="dropdown-menu border-secondary" style="background: #1a202c">
+                @foreach(\App\Models\Song::latest()->limit(5)->get() as $song)
+                    <li><a class="dropdown-item text-center text-light"
+                           href="{{ route('song', $song->slug) }}">{{ $song->name }}</a></li>
+                @endforeach
+                <li><a class="dropdown-item text-center text-light" href="{{ route('song.all') }}">بیشتر</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
