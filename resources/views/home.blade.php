@@ -3,7 +3,7 @@
 @section('content')
     <div class="container" dir="rtl">
         <!-- sliders -->
-        @include('layouts.carousel')
+        @include('layouts.first')
 
         <!-- recent songs -->
         @include('layouts.songs')
