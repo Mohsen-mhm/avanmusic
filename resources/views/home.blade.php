@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" dir="rtl">
-        <!-- sliders -->
+        <!-- first section -->
         @include('layouts.first')
 
         <!-- recent songs -->
@@ -13,6 +13,9 @@
 
         <!-- recent albums -->
         @include('layouts.albums')
+
+        <!-- third section -->
+        @include('layouts.third')
 
         <!-- recent artists -->
         @include('layouts.artists')
