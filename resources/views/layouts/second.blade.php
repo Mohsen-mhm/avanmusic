@@ -11,7 +11,8 @@
 
             <div class="features">
                 <div class="row">
-                    <div class="col-md-4">
+
+                    <div class="col-md-4 my-4">
                         <div class="info">
                             <div class="icon icon-info">
                                 <img src="/images/microphone.png" alt="artist" class="w-50 my-3">
@@ -21,7 +22,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 my-4">
                         <div class="info">
                             <div class="icon icon-success">
                                 <img src="/images/radio.png" alt="artist" class="w-50 my-3">
@@ -31,7 +32,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 my-4">
                         <div class="info">
                             <div class="icon icon-danger">
                                 <img src="/images/handphones.png" alt="artist" class="w-50 my-3">
