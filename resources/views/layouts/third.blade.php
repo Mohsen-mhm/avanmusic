@@ -9,7 +9,8 @@
 
             <div class="features w-100 mt-5 mb-1">
                 <div class="row d-flex justify-content-evenly align-items-center">
-                    <div class="col-md-3">
+
+                    <div class="col-md-3 my-4">
                         <div class="info">
                             <div class="icon icon-info">
                                 <i class="bi bi-music-note-beamed text-danger" style="font-size: 70px"></i>
@@ -18,7 +19,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 my-4">
                         <div class="info">
                             <div class="icon icon-info">
                                 <i class="bi bi-mic text-warning" style="font-size: 70px"></i>
@@ -27,7 +28,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 my-4">
                         <div class="info">
                             <div class="icon icon-info">
                                 <i class="bi bi-music-note-list text-info" style="font-size: 70px"></i>
@@ -36,7 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 my-4">
                         <div class="info">
                             <div class="icon icon-info">
                                 <i class="bi bi-headset text-success" style="font-size: 70px"></i>
