@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-6 col-md-6">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted text-nowrap">تماس با ما</a>
+                        <li class="nav-item mb-2"><a href="{{ route('contact') }}" class="nav-link p-0 text-muted text-nowrap">تماس با ما</a>
                         </li>
                         <li class="nav-item mb-2"><a href="{{ route('about') }}" class="nav-link p-0 text-muted text-nowrap">درباره ما</a>
                         </li>
