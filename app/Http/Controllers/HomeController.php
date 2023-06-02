@@ -14,4 +14,9 @@ class HomeController extends Controller
     {
         return view('home', ['user' => auth()->user()]);
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }
