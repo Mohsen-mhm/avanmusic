@@ -14,7 +14,6 @@
             </div>
 
             <div class="row mt-1">
-
                 <div class="col-lg-4">
                     <div class="info">
                         <div class="address">
@@ -34,13 +33,10 @@
                             <h4>شماره تلفن:</h4>
                             <p>۹۸۹۱۱۷۴۸۸۷۵۴+</p>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="col-lg-8 mt-5 mt-lg-0">
-
                     <form action="#" method="post" role="form">
                         @csrf
                         <div class="row d-flex justify-content-between">
@@ -66,11 +62,8 @@
                             <button type="submit" class="btn btn-primary mt-4 p-2 ps-3 pe-3">ارسال پیام</button>
                         </div>
                     </form>
-
                 </div>
-
             </div>
-
         </div>
     </section>
 @endsection
