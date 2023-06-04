@@ -11,6 +11,9 @@
         <!-- second section -->
         @include('layouts.second')
 
+        <!-- recent podcasts -->
+        @include('layouts.podcasts')
+
         <!-- recent albums -->
         @include('layouts.albums')
 

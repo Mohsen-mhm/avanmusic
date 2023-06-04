@@ -21,7 +21,7 @@
                     <img src="/storage/podcast-covers/{{ $podcast->cover }}" alt="podcast cover"
                          class="w-100 h-100 rounded rounded-circle">
                 </div>
-                <div class="text-center text-light mt-4 mb-4" id="track" data-src="/storage/musics/{{ $podcast->podcast }}">
+                <div class="text-center text-light mt-4 mb-4" id="track" data-src="/storage/podcasts/{{ $podcast->podcast }}">
                     <p class="h5">{{ $podcast->name }}</p>
                     <p class="text-muted h6">{{ $podcast->artist->name }}</p>
                 </div>
