@@ -14,11 +14,14 @@
         <!-- recent podcasts -->
         @include('layouts.podcasts')
 
+        <!-- third section -->
+        @include('layouts.third')
+
         <!-- recent albums -->
         @include('layouts.albums')
 
-        <!-- third section -->
-        @include('layouts.third')
+        <!-- fourth section -->
+        @include('layouts.fourth')
 
         <!-- recent artists -->
         @include('layouts.artists')
