@@ -13,7 +13,6 @@ class Podcast extends Model
     protected $fillable = [
         'name',
         'slug',
-        'artist_id',
         'podcast',
         'cover',
     ];
@@ -31,10 +30,5 @@ class Podcast extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    public function artist()
-    {
-        return $this->belongsTo(Artist::class);
     }
 }

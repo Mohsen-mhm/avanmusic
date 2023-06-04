@@ -13,7 +13,6 @@
                 <tr>
                     <th scope="col">ردیف</th>
                     <th scope="col">نام</th>
-                    <th scope="col">آرتیست</th>
                     <th scope="col">اقدامات</th>
                 </tr>
                 </thead>
@@ -22,7 +21,6 @@
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $podcast->name }}</td>
-                        <td><small>{{ $podcast->artist->name }}</small></td>
                         <td>
                             <a href="{{ route('admin.podcasts.edit', $podcast->id) }}"
                                class="btn btn-sm btn-primary">ویرایش</a>

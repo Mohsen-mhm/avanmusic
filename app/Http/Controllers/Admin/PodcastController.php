@@ -32,7 +32,6 @@ class PodcastController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
-            'artist_id' => ['required', 'string', 'exists:artists,id'],
             'podcast' => ['required', 'file'],
             'cover' => ['required', 'file', 'max:512'],
         ]);
@@ -77,7 +76,6 @@ class PodcastController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:50'],
-            'artist_id' => ['required', 'string', 'exists:artists,id'],
             'podcast' => ['file'],
             'cover' => ['file', 'max:512'],
         ]);

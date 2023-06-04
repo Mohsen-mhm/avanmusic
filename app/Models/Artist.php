@@ -27,11 +27,6 @@ class Artist extends Model
         return $this->hasMany(Song::class);
     }
 
-    public function podcasts()
-    {
-        return $this->hasMany(Podcast::class);
-    }
-
     public function sluggable(): array
     {
         return [

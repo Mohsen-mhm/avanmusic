@@ -85,7 +85,11 @@
                 پادکست ها
             </button>
             <ul class="dropdown-menu border-secondary" style="background: #1a202c">
-                <li><a class="dropdown-item text-center text-light" href="{{ route('album.all') }}">بیشتر</a></li>
+                @foreach(\App\Models\Podcast::latest()->limit(5)->get() as $podcast)
+                    <li><a class="dropdown-item text-center text-light"
+                           href="{{ route('podcast', $podcast->slug) }}">{{ $podcast->name }}</a></li>
+                @endforeach
+                <li><a class="dropdown-item text-center text-light" href="{{ route('podcast.all') }}">بیشتر</a></li>
             </ul>
         </div>
         <div class="btn-group py-1" role="group">
