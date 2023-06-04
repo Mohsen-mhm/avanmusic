@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ArtistController;
 use App\Http\Controllers\Admin\GenreController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PlaylistController;
+use App\Http\Controllers\Admin\PodcastController;
 use App\Http\Controllers\Admin\SongController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,8 @@ Route::resource('albums', AlbumController::class)->except(['show']);
 Route::resource('songs', SongController::class)->except(['show']);
 Route::post('songs/{song}/add-stanza', [SongController::class, 'addStanza'])->name('songs.add.stanza');
 Route::post('songs/remove-stanza/{stanza}', [SongController::class, 'removeStanza'])->name('songs.remove.stanza');
+
+Route::resource('podcasts', PodcastController::class)->except('show');
 
 Route::resource('playlists', PlaylistController::class)->except(['show']);
 Route::post('playlists/{playlist}/add-song/{song}', [PlaylistController::class, 'addSong'])->name('playlists.add');

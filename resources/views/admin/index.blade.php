@@ -3,7 +3,8 @@
 @section('content')
     <div class="container my-5">
         <div class="row justify-content-center">
-            <a href="{{ route('admin.users.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.users.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
@@ -24,7 +25,8 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('admin.genres.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.genres.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -44,7 +46,8 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('admin.artists.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.artists.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -68,7 +71,8 @@
         </div>
 
         <div class="row justify-content-center">
-            <a href="{{ route('admin.albums.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.albums.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg width="50" height="50" class="text-warning" stroke-width="1.5" viewBox="0 0 24 24"
@@ -96,7 +100,8 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('admin.songs.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.songs.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -116,7 +121,8 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('admin.playlists.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2" style="max-width: 300px;">
+            <a href="{{ route('admin.playlists.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg width="50" height="50" class="text-info" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
@@ -144,18 +150,44 @@
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-center align-items-center">
                         <svg width="50" height="50" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="20.5" cy="41.5" r="3.5" fill="#ffc107"/>
-                            <circle cx="37.5" cy="41.5" r="3.5" fill="#ffc107"/>
-                            <path d="M5 6L14 12L19 34H39L44 17H25" stroke="#ffc107" stroke-width="1" stroke-linecap="round"
+                            <circle cx="20.5" cy="41.5" r="3.5" fill="#0d6efd"/>
+                            <circle cx="37.5" cy="41.5" r="3.5" fill="#0d6efd"/>
+                            <path d="M5 6L14 12L19 34H39L44 17H25" stroke="#0d6efd" stroke-width="1"
+                                  stroke-linecap="round"
                                   stroke-linejoin="round"/>
-                            <path d="M25 26L32.2727 26L41 26" stroke="#ffc107" stroke-width="1" stroke-linecap="round"
+                            <path d="M25 26L32.2727 26L41 26" stroke="#0d6efd" stroke-width="1" stroke-linecap="round"
                                   stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <div class="col-md-10" dir="rtl">
                         <div class="card-body">
                             <p class="card-text text-light text-decoration-none">سفارشات: <b
-                                    class="text-warning">{{ \App\Models\Order::count() }}</b>
+                                    class="text-primary">{{ \App\Models\Order::count() }}</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ route('admin.podcasts.index') }}" class="card bg-dark text-light col-md-6 col-lg-4 mb-4 mx-2"
+               style="max-width: 300px;">
+                <div class="row g-0">
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <svg width="50" height="50" class="text-danger" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.6361 20.364C4.00738 18.7353 3 16.4853 3 14C3 9.02944 7.02944 5 12 5C16.9706 5 21 9.02944 21 14C21 16.4853 19.9926 18.7353 18.364 20.3639L19.7782 21.7782C21.7688 19.7875 23 17.0376 23 14C23 7.92487 18.0751 3 12 3C5.92487 3 1 7.92487 1 14C1 17.0376 2.23124 19.7876 4.22189 21.7782L5.6361 20.364Z"
+                                fill="currentColor"/>
+                            <path
+                                d="M16.9498 18.9497C18.2165 17.683 19 15.933 19 14C19 10.134 15.866 7 12 7C8.13401 7 5 10.134 5 14C5 15.933 5.78353 17.6831 7.05031 18.9498L8.46453 17.5356C7.55967 16.6308 7 15.3807 7 14C7 11.2386 9.23858 9 12 9C14.7614 9 17 11.2386 17 14C17 15.3807 16.4404 16.6307 15.5356 17.5355L16.9498 18.9497Z"
+                                fill="currentColor"/>
+                            <path
+                                d="M14.1213 16.1213C14.6642 15.5784 15 14.8284 15 14C15 12.3431 13.6569 11 12 11C10.3431 11 9 12.3431 9 14C9 14.8285 9.33581 15.5785 9.87874 16.1214L11.293 14.7072C11.112 14.5262 11 14.2762 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14C13 14.2761 12.8881 14.5261 12.7071 14.7071L14.1213 16.1213Z"
+                                fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="col-md-10" dir="rtl">
+                        <div class="card-body">
+                            <p class="card-text text-light text-decoration-none">پادکست ها: <b
+                                    class="text-danger">{{ \App\Models\Podcast::count() }}</b>
                             </p>
                         </div>
                     </div>
