@@ -7,6 +7,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SongController;
@@ -48,6 +49,9 @@ Route::middleware(['auth'])->prefix('account')->group(function () {
 
 Route::get('songs', [SongController::class, 'all'])->name('song.all');
 Route::get('song/{slug}', [SongController::class, 'index'])->name('song');
+
+Route::get('podcasts', [PodcastController::class, 'all'])->name('podcast.all');
+Route::get('podcast/{slug}', [PodcastController::class, 'index'])->name('podcast');
 
 Route::post('song/{slug}/like', [LikeController::class, 'like'])->name('song.like');
 Route::post('song/{slug}/dislike', [LikeController::class, 'dislike'])->name('song.dislike');
