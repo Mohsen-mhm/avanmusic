@@ -40,6 +40,14 @@
                 <li class="nav-item ms-1 me-1">
                     <a class="btn btn-sm btn-warning" href="{{ route('account.home') }}">پنل کاربری</a>
                 </li>
+
+                <li class="nav-item ms-1 me-1">
+                    <a class="btn btn-sm btn-outline-warning" href="#" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">خروج</a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             @endguest
         </ul>
 
@@ -64,6 +72,16 @@
                     <li>
                         <a class="dropdown-item text-light text-center mt-1 mb-1"
                            href="{{ route('cart') }}">سبد خرید</a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-light text-center mt-1 mb-1"
+                           href="{{ route('about') }}">درباره ما</a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-light text-center mt-1 mb-1"
+                           href="{{ route('contact') }}">تماس با ما</a>
                     </li>
 
                     <li>
@@ -96,6 +114,16 @@
                     <li>
                         <a class="dropdown-item text-light text-center mt-1 mb-1"
                            href="{{ route('cart') }}">سبد خرید</a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-light text-center mt-1 mb-1"
+                           href="{{ route('about') }}">درباره ما</a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-light text-center mt-1 mb-1"
+                           href="{{ route('contact') }}">تماس با ما</a>
                     </li>
 
                     <li>
