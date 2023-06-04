@@ -6,11 +6,12 @@
     </div>
     <div class="card-body row w-100 d-flex justify-content-between align-items-center">
         <small class="card-title col-md-6">برای عضویت در خبرنامه ایمیل خود را وارد کنید...</small>
-        <div class="col-md-6 mb-3">
-            <input id="email" type="email"
+        <div class="col-md-6 d-flex justify-content-between align-items-center mb-3">
+            <input id="email" type="email" style="border-radius: 0 0.375rem 0.375rem 0"
                    class="border-secondary bg-dark text-light form-control @error('email') is-invalid @enderror mt-2"
                    name="email" placeholder="ایمیل خود را وارد کنید" value="{{ old('email') }}" required
                    autocomplete="email">
+            <button class="btn btn-outline-warning mt-2" style="border-radius: 0.375rem 0 0 0.375rem">عضویت</button>
             @error('email')
             <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
