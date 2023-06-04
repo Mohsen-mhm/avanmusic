@@ -86,7 +86,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #777;
 }
-
-.row{
-    --bs-gutter-x: 0;
-}

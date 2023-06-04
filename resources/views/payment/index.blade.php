@@ -33,4 +33,9 @@
                   class="d-none">@csrf</form>
         </div>
     </div>
+    <style>
+        .row{
+            --bs-gutter-x: 0;
+        }
+    </style>
 @endsection

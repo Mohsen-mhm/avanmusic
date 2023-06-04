@@ -41,20 +41,20 @@
                         @csrf
                         <div class="row d-flex justify-content-between">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control bg-dark text-light border-secondary" id="name" style="width: 99%;"
+                                <input type="text" name="name" class="form-control bg-dark text-light border-secondary" id="name"
                                        placeholder="نام شما" required>
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control bg-dark text-light border-secondary" name="email" id="email" style="width: 99%;"
+                                <input type="email" class="form-control bg-dark text-light border-secondary" name="email" id="email"
                                        placeholder="ایمیل شما" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control bg-dark text-light border-secondary" name="subject" id="subject" style="width: 99.5%;"
+                            <input type="text" class="form-control bg-dark text-light border-secondary" name="subject" id="subject"
                                    placeholder="موضوع">
                         </div>
                         <div class="form-group mt-3">
-                                <textarea class="form-control bg-dark text-light border-secondary" name="message" rows="5" style="width: 99.5%;"
+                                <textarea class="form-control bg-dark text-light border-secondary" name="message" rows="5"
                                           placeholder="پیام"
                                           required></textarea>
                         </div>
