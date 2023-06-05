@@ -57,10 +57,13 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </div>
+                        @php
+                            $paidOrder = \App\Models\Order::where(['user_id' => $user->id, 'status' => 'paid'])->get();
+                        @endphp
                         <div class="col-md-10" dir="rtl">
                             <div class="card-body">
                                 <p class="card-text text-light text-decoration-none">خرید ها: <b
-                                        class="text-warning">{{ $user->orders->count() }}</b>
+                                        class="text-warning">{{ $paidOrder->count() }}</b>
                                 </p>
                             </div>
                         </div>
