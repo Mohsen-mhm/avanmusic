@@ -13,13 +13,13 @@
             <div class="col-md-6 p-0 text-center order-1 order-sm-2">
                 <img
                     src="/images/team1.png"
-                    class="w-75" alt="">
+                    class="w-75" alt="team working">
             </div>
 
             <div class="col-md-6 p-0 text-center">
                 <img
                     src="/images/team2.png"
-                    class="w-75" alt="">
+                    class="w-75" alt="team working">
             </div>
             <div class="col-md-6 p-4 p-sm-5">
                 <small class="text-uppercase text-warning"></small>
