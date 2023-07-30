@@ -4,7 +4,8 @@
         <div class="col-12 col-md-4 text-center text-md-start">
             <div class="logo d-flex flex-column justify-content-center align-items-center">
                 <img src="images/png-music-logo-hd-png-removebg-preview.png" class="aks" alt="">
-                <p class="mb-0 pt-3 text-muted">© 2022 Company, Inc</p>
+                <p class="mb-0 pt-3 text-muted">© 2023 Avan Music</p>
+                <p class="mb-0 pt-3 text-muted">طراحی و توسعه&nbsp;|&nbsp;<a href="https://mohsen-mhm.ir" target="_blank" class="text-warning">محسن محمدی</a></p>
             </div>
         </div>
 
