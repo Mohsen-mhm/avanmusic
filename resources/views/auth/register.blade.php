@@ -4,7 +4,7 @@
     <div class="container" dir="rtl">
         <div class="row justify-content-center">
             <div class="d-flex justify-content-center align-items-center flex-column">
-                <img class="mb-1" src="/images/phonograph-record-transprent-music-logo-png-hd.png" alt="logo"
+                <img class="mb-1 img-fluid" src="/images/phonograph-record-transprent-music-logo-png-hd.png" alt="logo"
                      width="120"
                      height="100">
                 <h1 class="h3 mb-3 fw-normal text-light ">Avan Music</h1>
