@@ -11,7 +11,7 @@
                         <form method="POST" action="{{ route('register') }}" class="text-white">
                             @csrf
 
-                            <div class="row mb-3">
+                            <div class="row mb-2">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">نام</label>
 
                                 <div class="col-md-8">
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <div class="row mb-2">
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-end">ایمیل</label>
 
@@ -46,7 +46,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <div class="row mb-2">
                                 <label for="password"
                                        class="col-md-4 col-form-label text-md-end">رمز عبور</label>
 
@@ -64,7 +64,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <div class="row mb-2">
                                 <label for="password-confirm"
                                        class="col-md-4 col-form-label text-md-end">تکرار رمز عبور</label>
 
