@@ -3,25 +3,25 @@
 @section('content')
     <div class="container" dir="rtl">
         <!-- first section -->
-        @include('layouts.first')
+        @include('layouts.hero')
 
         <!-- recent songs -->
         @include('layouts.songs')
 
         <!-- second section -->
-        @include('layouts.second')
+        @include('layouts.experience')
 
         <!-- recent podcasts -->
         @include('layouts.podcasts')
 
         <!-- third section -->
-        @include('layouts.third')
+        @include('layouts.statistics')
 
         <!-- recent albums -->
         @include('layouts.albums')
 
         <!-- fourth section -->
-        @include('layouts.fourth')
+        @include('layouts.newsletter')
 
         <!-- recent artists -->
         @include('layouts.artists')
