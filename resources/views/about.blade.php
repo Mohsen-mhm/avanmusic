@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container my-5" dir="rtl">
+        
         <div class="row text-light">
             <div class="col-md-6 p-4 p-sm-5 order-2 order-sm-1">
                 <small class="text-uppercase text-warning"></small>
@@ -28,5 +29,6 @@
 
             </div>
         </div>
+        
     </div>
 @endsection
