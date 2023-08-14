@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', [AdminController::class, 'home'])->name('home');
 
 Route::resource('users', UserController::class)->except(['show', 'destroy']);
