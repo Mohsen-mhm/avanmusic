@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container" dir="rtl">
+        
         <div class="row justify-content-center">
             <h2 class="text-center text-warning mb-4">همه موزیک ها</h2>
 
@@ -21,7 +22,9 @@
             @endforeach
 
         </div>
+        
         {{ $songs->links() }}
+        
     </div>
 @endsection
 
